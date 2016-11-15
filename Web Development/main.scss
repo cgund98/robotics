@@ -36,6 +36,17 @@ $font-sizes: (
     @content;
   }
 }
+@mixin f-size($font-size) {
+    font-size: #{$font-size};
+}
+@mixin body-font {
+    font-size: #{map-get($font-sizes, body-text)};
+    font-family: Lato;
+}
+@mixin title-font($size) {
+    font-size: #{map-get($font-sizes, $size)};
+    font-family: Montserrat;
+}
 
 /* ---Styles--- */
 
@@ -65,6 +76,12 @@ $font-sizes: (
     box-sizing: border-box;
 }
 
-body {
+a {
+    text-decoration: none;
+}
+
+// Nav Bar
+.header-main {
+    width: 100%;
     
 }

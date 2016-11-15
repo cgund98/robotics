@@ -443,4 +443,10 @@
 *::after {
   box-sizing: border-box; }
 
+a {
+  text-decoration: none; }
+
+.header-main {
+  width: 100%; }
+
 /*# sourceMappingURL=styles.css.map */
