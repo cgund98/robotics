@@ -1,0 +1,70 @@
+/* Styles for HBR Website
+   Made by HBR Live Web Development */
+
+
+// ---Imports---
+@import url('https://fonts.googleapis.com/css?family=Lato|Montserrat');
+
+// ---Variables---
+$dark: #1b1b1b;
+$light: #f6f6f6;
+$black: #000000;
+
+$breakpoints: (
+  xs: 32rem,
+  sm: 48rem,
+  md: 72rem,
+  lg: 96rem,
+  xl: 102rem,
+  xx: 120rem
+);
+$fonts: (
+    title: Montserrat,
+    body: Lato
+);
+$font-sizes: (
+    body-text: .75rem,
+    title-lg: 2rem,
+    title-md: 1.5rem,
+    title-sm: 1rem,
+    nav: 1.25rem
+);
+// ---Mixins---
+
+@mixin break($size) {  
+  @media (min-width: map-get($breakpoints, $size)) {
+    @content;
+  }
+}
+
+/* ---Styles--- */
+
+    // Grid layout
+    
+    $items: 12;
+    .grid {
+        display: flex;
+        flex-flow: row wrap;
+    }
+    // loop over the breakpoints
+    @each $key, $value in $breakpoints {
+      @for $i from 1 through $items {
+        .grid__item--#{$key}-span-#{$i} {
+          flex: 0 0 100%;
+          @include break($key) {
+            flex: 0 0 #{$i / $items * 100%};
+          }
+        }
+      }
+    }
+    
+    
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    
+}
