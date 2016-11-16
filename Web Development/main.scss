@@ -27,8 +27,8 @@ $font-sizes: (
     title-lg: 2rem,
     title-md: 1.5rem,
     title-sm: 1rem,
-    hero-lg: 6rem,
-    hero-m: 4rem,
+    hero-lg: 3rem,
+    hero-md: 2.25rem,
     nav: 1rem
 );
 // ---Mixins---
@@ -87,6 +87,7 @@ $font-sizes: (
 }
 body{
     margin: 0;
+    background: $dark;
 }
 a {
     text-decoration: none;
@@ -94,6 +95,7 @@ a {
 
 // Nav Bar
 .header-main {
+    display: none;
     position: absolute;
     padding: 1em;
     width: 100%;
@@ -101,7 +103,7 @@ a {
     
     div {
         margin: auto;
-        width: 80%;
+        width: 90%;
         a {
             @include title-font(nav);
             color: $light;
@@ -117,11 +119,13 @@ a {
             float: right;
             a{
                 padding: 4em;
-                font-weight: 400;
                 font-size: 1rem;
                 letter-spacing: 2px;
             }
         }
+    }
+    @include break(sm) {
+        display: block;
     }
 }
 
@@ -129,20 +133,64 @@ a {
 .hero {
     z-index: 1;
     overflow: hidden;
+    width: 100%;
     img {
-        position: relative;
-        top: -130px;
-        width: 100%;
+            position: relative;
+            // top: -110px;
+            width: 100%;
     }
-    p {
-        text-align: center;
-        width: 80%;
-        color: $light;
+    div {
         position: absolute;
-        z-index: 99;
-        @include title-font(hero-lg);
         top: 40%;
         left: 50%;
+        width: 100%;
+        z-index: 99;
         @include transform(translate(-50%,-50%));
+        text-align: center;
+        p {
+            color: $light;
+            @include title-font(hero-lg);
+            letter-spacing: 5px;
+            span {
+                @include title-font(hero-md);
+                letter-spacing: 10px;
+            }
+            @include break(xs) {
+                font-size: 3rem;
+                letter-spacing: 7.5px;
+                span {
+                    letter-spacing: 12.5px;
+                }
+            }
+            @include break(sm) {
+                font-size: 4rem;
+                letter-spacing: 7.5px;
+                span {
+                    letter-spacing: 12.5px;
+                    font-size: 3rem;
+                }
+            }
+            @include break(md) {
+                font-size: 5.5rem;
+                letter-spacing: 10px;
+                span {
+                    letter-spacing: 20px;
+                    font-size: 4.25rem;
+                }
+            }
+        }
+        a {
+            color: $light;
+            @include title-font(nav);
+            letter-spacing: 3px;
+            border: 3px $light solid;
+            border-radius: 2px;
+            padding: 10px 20px;
+            transition: .15s ease-in;
+            &:hover {
+                background: $light;
+                color: $dark;
+            }
+        }
     }
 }

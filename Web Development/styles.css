@@ -444,19 +444,21 @@
   box-sizing: border-box; }
 
 body {
-  margin: 0; }
+  margin: 0;
+  background: #1b1b1b; }
 
 a {
   text-decoration: none; }
 
 .header-main {
+  display: none;
   position: absolute;
   padding: 1em;
   width: 100%;
   z-index: 100; }
   .header-main div {
     margin: auto;
-    width: 80%; }
+    width: 90%; }
     .header-main div a {
       font-size: 1rem;
       font-family: Montserrat;
@@ -470,32 +472,74 @@ a {
       float: right; }
       .header-main div nav a {
         padding: 4em;
-        font-weight: 400;
         font-size: 1rem;
         letter-spacing: 2px; }
+  @media (min-width: 48rem) {
+    .header-main {
+      display: block; } }
 
 .hero {
   z-index: 1;
-  overflow: hidden; }
+  overflow: hidden;
+  width: 100%; }
   .hero img {
     position: relative;
-    top: -130px;
     width: 100%; }
-  .hero p {
-    text-align: center;
-    width: 80%;
-    color: #f6f6f6;
+  .hero div {
     position: absolute;
-    z-index: 99;
-    font-size: 6rem;
-    font-family: Montserrat;
-    font-weight: 700;
     top: 40%;
     left: 50%;
+    width: 100%;
+    z-index: 99;
     -moz-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%); }
+    transform: translate(-50%, -50%);
+    text-align: center; }
+    .hero div p {
+      color: #f6f6f6;
+      font-size: 3rem;
+      font-family: Montserrat;
+      font-weight: 700;
+      letter-spacing: 5px; }
+      .hero div p span {
+        font-size: 2.25rem;
+        font-family: Montserrat;
+        font-weight: 700;
+        letter-spacing: 10px; }
+      @media (min-width: 32rem) {
+        .hero div p {
+          font-size: 3rem;
+          letter-spacing: 7.5px; }
+          .hero div p span {
+            letter-spacing: 12.5px; } }
+      @media (min-width: 48rem) {
+        .hero div p {
+          font-size: 4rem;
+          letter-spacing: 7.5px; }
+          .hero div p span {
+            letter-spacing: 12.5px;
+            font-size: 3rem; } }
+      @media (min-width: 72rem) {
+        .hero div p {
+          font-size: 5.5rem;
+          letter-spacing: 10px; }
+          .hero div p span {
+            letter-spacing: 20px;
+            font-size: 4.25rem; } }
+    .hero div a {
+      color: #f6f6f6;
+      font-size: 1rem;
+      font-family: Montserrat;
+      font-weight: 700;
+      letter-spacing: 3px;
+      border: 3px #f6f6f6 solid;
+      border-radius: 2px;
+      padding: 10px 20px;
+      transition: .15s ease-in; }
+      .hero div a:hover {
+        background: #f6f6f6;
+        color: #1b1b1b; }
 
 /*# sourceMappingURL=styles.css.map */
