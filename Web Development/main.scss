@@ -144,10 +144,5 @@ a {
         top: 40%;
         left: 50%;
         @include transform(translate(-50%,-50%));
-        
-        .smaller {
-            font-size: #{map-get($font-sizes, hero-md)};
-            letter-spacing: 3px;
-        }
     }
 }
