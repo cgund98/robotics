@@ -27,7 +27,9 @@ $font-sizes: (
     title-lg: 2rem,
     title-md: 1.5rem,
     title-sm: 1rem,
-    nav: 1.25rem
+    hero-lg: 6rem,
+    hero-m: 4rem,
+    nav: 1rem
 );
 // ---Mixins---
 
@@ -46,6 +48,14 @@ $font-sizes: (
 @mixin title-font($size) {
     font-size: #{map-get($font-sizes, $size)};
     font-family: Montserrat;
+    font-weight: 700;
+}
+@mixin transform($transforms) {
+	   -moz-transform: $transforms;
+	     -o-transform: $transforms;
+	    -ms-transform: $transforms;
+	-webkit-transform: $transforms;
+          transform: $transforms;
 }
 
 /* ---Styles--- */
@@ -75,13 +85,69 @@ $font-sizes: (
 *::after {
     box-sizing: border-box;
 }
-
+body{
+    margin: 0;
+}
 a {
     text-decoration: none;
 }
 
 // Nav Bar
 .header-main {
+    position: absolute;
+    padding: 1em;
     width: 100%;
+    z-index: 100;
     
+    div {
+        margin: auto;
+        width: 80%;
+        a {
+            @include title-font(nav);
+            color: $light;
+            font-size: 1.25rem;
+            letter-spacing: 1px;
+            
+            span {
+                color: #4ac753;
+            }
+        }
+        
+        nav {
+            float: right;
+            a{
+                padding: 4em;
+                font-weight: 400;
+                font-size: 1rem;
+                letter-spacing: 2px;
+            }
+        }
+    }
+}
+
+// Hero Image
+.hero {
+    z-index: 1;
+    overflow: hidden;
+    img {
+        position: relative;
+        top: -130px;
+        width: 100%;
+    }
+    p {
+        text-align: center;
+        width: 80%;
+        color: $light;
+        position: absolute;
+        z-index: 99;
+        @include title-font(hero-lg);
+        top: 40%;
+        left: 50%;
+        @include transform(translate(-50%,-50%));
+        
+        .smaller {
+            font-size: #{map-get($font-sizes, hero-md)};
+            letter-spacing: 3px;
+        }
+    }
 }

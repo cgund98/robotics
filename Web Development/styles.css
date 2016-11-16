@@ -443,10 +443,61 @@
 *::after {
   box-sizing: border-box; }
 
+body {
+  margin: 0; }
+
 a {
   text-decoration: none; }
 
 .header-main {
-  width: 100%; }
+  position: absolute;
+  padding: 1em;
+  width: 100%;
+  z-index: 100; }
+  .header-main div {
+    margin: auto;
+    width: 80%; }
+    .header-main div a {
+      font-size: 1rem;
+      font-family: Montserrat;
+      font-weight: 700;
+      color: #f6f6f6;
+      font-size: 1.25rem;
+      letter-spacing: 1px; }
+      .header-main div a span {
+        color: #4ac753; }
+    .header-main div nav {
+      float: right; }
+      .header-main div nav a {
+        padding: 4em;
+        font-weight: 400;
+        font-size: 1rem;
+        letter-spacing: 2px; }
+
+.hero {
+  z-index: 1;
+  overflow: hidden; }
+  .hero img {
+    position: relative;
+    top: -130px;
+    width: 100%; }
+  .hero p {
+    text-align: center;
+    width: 80%;
+    color: #f6f6f6;
+    position: absolute;
+    z-index: 99;
+    font-size: 6rem;
+    font-family: Montserrat;
+    font-weight: 700;
+    top: 40%;
+    left: 50%;
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); }
+    .hero p .smaller {
+      letter-spacing: 3px; }
 
 /*# sourceMappingURL=styles.css.map */
