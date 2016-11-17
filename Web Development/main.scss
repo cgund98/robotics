@@ -13,6 +13,7 @@ $black: #000000;
 $breakpoints: (
   xs: 32rem,
   sm: 48rem,
+  sm-md: 56rem,
   md: 72rem,
   lg: 96rem,
   xl: 102rem,
@@ -87,12 +88,19 @@ $font-sizes: (
 }
 body{
     margin: 0;
-    background: $dark;
 }
 a {
     text-decoration: none;
 }
-
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Montserrat;
+    font-weight: 700;
+}
 // Nav Bar
 .header-main {
     display: none;
@@ -100,7 +108,9 @@ a {
     padding: 1em;
     width: 100%;
     z-index: 100;
-    
+    @include break(sm-md) {
+        display: initial;
+    }
     div {
         margin: auto;
         width: 90%;
@@ -109,6 +119,7 @@ a {
             color: $light;
             font-size: 1.25rem;
             letter-spacing: 1px;
+            margin-left: 5%;
             
             span {
                 color: #4ac753;
@@ -117,15 +128,13 @@ a {
         
         nav {
             float: right;
-            a{
+            a {
                 padding: 4em;
                 font-size: 1rem;
                 letter-spacing: 2px;
+                margin-left: 0%;
             }
         }
-    }
-    @include break(sm) {
-        display: block;
     }
 }
 
@@ -133,20 +142,30 @@ a {
 .hero {
     z-index: 1;
     overflow: hidden;
-    width: 100%;
+    background: #1b1b1b url('land.jpg') no-repeat center top;
+    background-size: cover;
+    background-position: 50% 10%;
     img {
             position: relative;
             // top: -110px;
             width: 100%;
     }
     div {
-        position: absolute;
-        top: 40%;
+        // position: absolute;
+        top: 50%;
         left: 50%;
         width: 100%;
         z-index: 99;
-        @include transform(translate(-50%,-50%));
+        // @include transform(translate(50%,50%));
         text-align: center;
+        padding: 25% 0;
+        @include break(sm) {
+            padding: 20%;
+        }
+        @include break(md) {
+            padding: 15% 0;
+        }
+        
         p {
             color: $light;
             @include title-font(hero-lg);
@@ -191,6 +210,26 @@ a {
                 background: $light;
                 color: $dark;
             }
+        }
+    }
+}
+
+// Widgets
+.widgets {
+    width: 80%;
+    margin: auto;
+    
+    div {
+        padding: 30px;
+        h2 {
+            width: 100%;
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+        p {
+            margin-top: 0;
+            @include body-font;
+            font-size: 1rem;
         }
     }
 }
