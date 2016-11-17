@@ -4,11 +4,13 @@
 
 // ---Imports---
 @import url('https://fonts.googleapis.com/css?family=Lato|Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 // ---Variables---
 $dark: #1b1b1b;
 $light: #f6f6f6;
 $black: #000000;
+$green: #49b050;
 
 $breakpoints: (
   xs: 32rem,
@@ -25,7 +27,7 @@ $fonts: (
 );
 $font-sizes: (
     body-text: .75rem,
-    title-lg: 2rem,
+    title-lg: 3rem,
     title-md: 1.5rem,
     title-sm: 1rem,
     hero-lg: 3rem,
@@ -45,6 +47,7 @@ $font-sizes: (
 @mixin body-font {
     font-size: #{map-get($font-sizes, body-text)};
     font-family: Lato;
+    line-height: 1.35rem;
 }
 @mixin title-font($size) {
     font-size: #{map-get($font-sizes, $size)};
@@ -129,7 +132,8 @@ h6 {
         nav {
             float: right;
             a {
-                padding: 4em;
+                margin: 5em;
+                padding: 1em;
                 font-size: 1rem;
                 letter-spacing: 2px;
                 margin-left: 0%;
@@ -214,22 +218,58 @@ h6 {
     }
 }
 
+// Making the Future
+.about {
+    div {
+        width: 100%;
+        h1 {
+            @include title-font(title-lg);
+            text-align: center;
+            color: $dark;
+        }
+    }
+}
+
 // Widgets
 .widgets {
-    width: 80%;
+    padding-top: 6em;
+    width: 100%;
     margin: auto;
+    @include break(md) {
+        width: 75%;
+    }
     
     div {
-        padding: 30px;
-        h2 {
-            width: 100%;
-            font-size: 1.25rem;
-            margin-bottom: 10px;
+        padding: 5px;
+        
+        img {
+            background: $green;
+            border-radius: 50%;
+            width: 30%;
+            margin: auto;
+            margin-left: 35%;
+            @include break(lg) {
+                width: 20%;
+                margin-left: 40%;
+            }
         }
-        p {
-            margin-top: 0;
-            @include body-font;
-            font-size: 1rem;
+        div {
+            text-align: center;
+            padding: none;
+            margin: auto;
+            width: 85%;
+            h2 {
+                color: $dark;
+                font-size: 1.5rem;
+                margin-bottom: 10px;
+            }
+            p {
+                font-weight: 400;
+                color: #373D3F;
+                margin-top: 0;
+                @include body-font;
+                font-size: 1rem;
+            }
         }
     }
 }

@@ -1,6 +1,7 @@
 /* Styles for HBR Website
    Made by HBR Live Web Development */
 @import url("https://fonts.googleapis.com/css?family=Lato|Montserrat");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
 /* ---Styles--- */
 .grid {
   display: flex;
@@ -555,7 +556,8 @@ h6 {
     .header-main div nav {
       float: right; }
       .header-main div nav a {
-        padding: 4em;
+        margin: 5em;
+        padding: 1em;
         font-size: 1rem;
         letter-spacing: 2px;
         margin-left: 0%; }
@@ -627,19 +629,50 @@ h6 {
         background: #f6f6f6;
         color: #1b1b1b; }
 
+.about div {
+  width: 100%; }
+  .about div h1 {
+    font-size: 3rem;
+    font-family: Montserrat;
+    font-weight: 700;
+    text-align: center;
+    color: #1b1b1b; }
+
 .widgets {
-  width: 80%;
+  padding-top: 6em;
+  width: 100%;
   margin: auto; }
+  @media (min-width: 72rem) {
+    .widgets {
+      width: 75%; } }
   .widgets div {
-    padding: 30px; }
-    .widgets div h2 {
-      width: 100%;
-      font-size: 1.25rem;
-      margin-bottom: 10px; }
-    .widgets div p {
-      margin-top: 0;
-      font-size: 0.75rem;
-      font-family: Lato;
-      font-size: 1rem; }
+    padding: 5px; }
+    .widgets div img {
+      background: #49b050;
+      border-radius: 50%;
+      width: 30%;
+      margin: auto;
+      margin-left: 35%; }
+      @media (min-width: 96rem) {
+        .widgets div img {
+          width: 20%;
+          margin-left: 40%; } }
+    .widgets div div {
+      text-align: center;
+      padding: none;
+      margin: auto;
+      width: 85%; }
+      .widgets div div h2 {
+        color: #1b1b1b;
+        font-size: 1.5rem;
+        margin-bottom: 10px; }
+      .widgets div div p {
+        font-weight: 400;
+        color: #373D3F;
+        margin-top: 0;
+        font-size: 0.75rem;
+        font-family: Lato;
+        line-height: 1.35rem;
+        font-size: 1rem; }
 
 /*# sourceMappingURL=styles.css.map */
