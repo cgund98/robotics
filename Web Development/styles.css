@@ -531,6 +531,29 @@ h6 {
   font-family: Montserrat;
   font-weight: 700; }
 
+.page-title {
+  width: 100%;
+  font-size: 3rem;
+  font-family: Montserrat;
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #1b1b1b;
+  letter-spacing: 1px; }
+  @media (min-width: 48rem) {
+    .page-title {
+      letter-spacing: 3px;
+      font-size: 2.5rem; } }
+
+p {
+  font-size: 1rem;
+  font-family: Lato;
+  line-height: 1.25rem; }
+  @media (min-width: 48rem) {
+    p {
+      font-size: 1.15rem;
+      line-height: 1.75rem; } }
+
 .header-main {
   display: none;
   position: absolute;
@@ -565,9 +588,7 @@ h6 {
 .hero {
   z-index: 1;
   overflow: hidden;
-  background: #1b1b1b url("land.jpg") no-repeat center top;
-  background-size: cover;
-  background-position: 50% 10%; }
+  background: #1b1b1b; }
   .hero img {
     position: relative;
     width: 100%; }
@@ -578,18 +599,25 @@ h6 {
     z-index: 99;
     text-align: center;
     padding: 25% 0; }
+    @media (min-width: 56rem) {
+      .hero div {
+        top: 25%; } }
     @media (min-width: 48rem) {
       .hero div {
         padding: 20%; } }
+    @media (min-width: 56rem) {
+      .hero div {
+        padding-top: 10%; } }
     @media (min-width: 72rem) {
       .hero div {
-        padding: 15% 0; } }
+        padding: 7.5% 0; } }
     .hero div p {
       color: #f6f6f6;
       font-size: 3rem;
       font-family: Montserrat;
       font-weight: 700;
-      letter-spacing: 5px; }
+      letter-spacing: 5px;
+      line-height: 5rem; }
       .hero div p span {
         font-size: 2.25rem;
         font-family: Montserrat;
@@ -628,51 +656,233 @@ h6 {
       .hero div a:hover {
         background: #f6f6f6;
         color: #1b1b1b; }
+    .hero div img {
+      width: 50%; }
+      @media (min-width: 56rem) {
+        .hero div img {
+          width: 40%; } }
+      @media (min-width: 72rem) {
+        .hero div img {
+          width: 25%; } }
 
-.about div {
-  width: 100%; }
-  .about div h1 {
-    font-size: 3rem;
-    font-family: Montserrat;
-    font-weight: 700;
+.hero-home {
+  background: url("land.jpg") no-repeat center top;
+  background-size: cover;
+  background-position: 50% 10%; }
+  .hero-home div {
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    z-index: 99;
     text-align: center;
-    color: #1b1b1b; }
+    padding: 25% 0; }
+    @media (min-width: 56rem) {
+      .hero-home div {
+        top: 25%; } }
+    @media (min-width: 48rem) {
+      .hero-home div {
+        padding: 20%; } }
+    @media (min-width: 72rem) {
+      .hero-home div {
+        padding: 15% 0; } }
+
+.about {
+  padding: 7em 0; }
+  .about div {
+    margin: auto;
+    width: 90%; }
+    .about div h1 {
+      font-size: 3rem;
+      font-family: Montserrat;
+      font-weight: 700;
+      font-size: 1.5rem;
+      text-align: center;
+      color: #1b1b1b;
+      letter-spacing: 1px; }
+      @media (min-width: 48rem) {
+        .about div h1 {
+          letter-spacing: 3px;
+          font-size: 2.5rem; } }
+    .about div p {
+      text-align: center;
+      font-size: 1.15rem; }
+      @media (min-width: 56rem) {
+        .about div p {
+          font-size: 1.25rem; } }
 
 .widgets {
-  padding-top: 6em;
+  padding: 6em 0;
+  width: 100%;
+  background: #f6f6f6; }
+  .widgets div {
+    width: 100%;
+    margin: auto;
+    margin-top: 0; }
+    @media (min-width: 72rem) {
+      .widgets div {
+        width: 75%; } }
+    .widgets div div {
+      padding: 5px;
+      margin: 1em 0; }
+      .widgets div div img {
+        background: #49b050;
+        border-radius: 50%;
+        width: 30%;
+        margin: auto;
+        margin-left: 35%; }
+        @media (min-width: 96rem) {
+          .widgets div div img {
+            width: 20%;
+            margin-left: 40%; } }
+      .widgets div div div {
+        text-align: center;
+        padding: none;
+        margin: auto;
+        width: 85%; }
+        .widgets div div div h2 {
+          color: #3f3f3f;
+          letter-spacing: 1.5px;
+          font-weight: 400;
+          font-size: 1.25rem;
+          margin-bottom: 10px; }
+        .widgets div div div p {
+          font-weight: 400;
+          color: #7c7c7c;
+          margin-top: 1em; }
+
+.subgroups {
+  padding: 7em 0;
+  background: #1b1b1b;
+  color: #f6f6f6;
+  text-align: center; }
+  .subgroups h2 {
+    font-size: 2rem;
+    font-family: Montserrat;
+    font-weight: 700;
+    letter-spacing: 5px; }
+    @media (min-width: 72rem) {
+      .subgroups h2 {
+        font-size: 2.5rem; } }
+  .subgroups .icons {
+    padding: 2em 0 3em 0;
+    width: 90%;
+    margin: auto; }
+    @media (min-width: 72rem) {
+      .subgroups .icons {
+        width: 70%; } }
+    .subgroups .icons div {
+      display: inline-block;
+      width: 50%; }
+      @media (min-width: 48rem) {
+        .subgroups .icons div {
+          width: 25%; } }
+      .subgroups .icons div img {
+        margin: auto;
+        width: 80%;
+        max-width: 232px; }
+  .subgroups .text {
+    margin: auto;
+    padding: 1em;
+    width: 100%; }
+    @media (min-width: 48rem) {
+      .subgroups .text {
+        width: 80%; } }
+    @media (min-width: 72rem) {
+      .subgroups .text {
+        width: 40%; } }
+    .subgroups .text div h3 {
+      margin: auto;
+      width: 80%;
+      font-size: 2rem;
+      font-family: Montserrat;
+      font-weight: 700;
+      font-weight: 400;
+      padding-bottom: 1.5rem;
+      border-bottom: 2px #36713a solid;
+      letter-spacing: 3px;
+      font-size: 1.5em; }
+      @media (min-width: 48rem) {
+        .subgroups .text div h3 {
+          font-size: 1.75rem;
+          width: 60%;
+          letter-spacing: 5px; } }
+    .subgroups .text div p {
+      padding-top: 2em;
+      margin: auto; }
+      @media (min-width: 56rem) {
+        .subgroups .text div p {
+          font-size: 1.25rem; } }
+
+.game {
+  padding: 7em 1em;
+  text-align: center;
   width: 100%;
   margin: auto; }
+  @media (min-width: 48rem) {
+    .game {
+      width: 80%; } }
   @media (min-width: 72rem) {
-    .widgets {
-      width: 75%; } }
-  .widgets div {
-    padding: 5px; }
-    .widgets div img {
-      background: #49b050;
-      border-radius: 50%;
-      width: 30%;
-      margin: auto;
-      margin-left: 35%; }
-      @media (min-width: 96rem) {
-        .widgets div img {
-          width: 20%;
-          margin-left: 40%; } }
-    .widgets div div {
-      text-align: center;
-      padding: none;
-      margin: auto;
-      width: 85%; }
-      .widgets div div h2 {
-        color: #1b1b1b;
+    .game {
+      width: 60%; } }
+  .game h2 {
+    letter-spacing: 3px;
+    font-size: 2rem;
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 1.5rem; }
+    @media (min-width: 48rem) {
+      .game h2 {
+        font-size: 2rem; } }
+
+.press {
+  margin: auto;
+  width: 100%;
+  padding: 4em 1em; }
+  @media (min-width: 56rem) {
+    .press {
+      width: 80%; } }
+  @media (min-width: 72rem) {
+    .press {
+      width: 60%; } }
+  .press div {
+    padding: 2em 0;
+    padding-top: 4em;
+    overflow: hidden;
+    border-bottom: #92d096 2px solid;
+    float: right; }
+    @media (min-width: 48rem) {
+      .press div {
+        height: 16em; } }
+    @media (min-width: 72rem) {
+      .press div {
+        height: 18em; } }
+    .press div img {
+      float: left;
+      width: 100%; }
+      @media (min-width: 48rem) {
+        .press div img {
+          width: 35%;
+          height: 100%; } }
+    .press div div {
+      padding: 1em;
+      padding-top: .25em;
+      width: 100%;
+      height: 13.15em;
+      border: none; }
+      @media (min-width: 48rem) {
+        .press div div {
+          width: 60%;
+          height: 100%; } }
+      .press div div h3 {
+        margin: 0;
+        margin-top: .5em;
+        text-align: center;
         font-size: 1.5rem;
-        margin-bottom: 10px; }
-      .widgets div div p {
-        font-weight: 400;
-        color: #373D3F;
-        margin-top: 0;
-        font-size: 0.75rem;
-        font-family: Lato;
-        line-height: 1.35rem;
-        font-size: 1rem; }
+        font-family: Montserrat;
+        font-weight: 700; }
+        @media (min-width: 48rem) {
+          .press div div h3 {
+            text-align: left;
+            margin-top: 0; } }
 
 /*# sourceMappingURL=styles.css.map */

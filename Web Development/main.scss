@@ -11,7 +11,8 @@ $dark: #1b1b1b;
 $light: #f6f6f6;
 $black: #000000;
 $green: #49b050;
-
+$highlight: #36713a;
+$highlight-light: #92d096;
 $breakpoints: (
   xs: 32rem,
   sm: 48rem,
@@ -26,17 +27,18 @@ $fonts: (
     body: Lato
 );
 $font-sizes: (
-    body-text: .75rem,
+    body-text: 1rem,
     title-lg: 3rem,
-    title-md: 1.5rem,
+    title-md: 2rem,
     title-sm: 1rem,
+    blog-title: 1.5rem,
     hero-lg: 3rem,
     hero-md: 2.25rem,
     nav: 1rem
 );
 // ---Mixins---
 
-@mixin break($size) {  
+@mixin break($size) {
   @media (min-width: map-get($breakpoints, $size)) {
     @content;
   }
@@ -44,11 +46,7 @@ $font-sizes: (
 @mixin f-size($font-size) {
     font-size: #{$font-size};
 }
-@mixin body-font {
-    font-size: #{map-get($font-sizes, body-text)};
-    font-family: Lato;
-    line-height: 1.35rem;
-}
+
 @mixin title-font($size) {
     font-size: #{map-get($font-sizes, $size)};
     font-family: Montserrat;
@@ -65,7 +63,7 @@ $font-sizes: (
 /* ---Styles--- */
 
     // Grid layout
-    
+
     $items: 12;
     .grid {
         display: flex;
@@ -82,8 +80,8 @@ $font-sizes: (
         }
       }
     }
-    
-    
+
+
 *,
 *::before,
 *::after {
@@ -104,6 +102,27 @@ h6 {
     font-family: Montserrat;
     font-weight: 700;
 }
+.page-title {
+  width: 100%;
+  @include title-font(title-lg);
+  font-size: 1.5rem;
+  text-align: center;
+  color: $dark;
+  letter-spacing: 1px;
+  @include break(sm) {
+    letter-spacing: 3px;
+    font-size: 2.5rem;
+  }
+}
+p {
+    font-size: #{map-get($font-sizes, body-text)};
+    font-family: Lato;
+    line-height: 1.25rem;
+    @include break(sm) {
+      font-size: 1.15rem;
+      line-height: 1.75rem;
+    }
+}
 // Nav Bar
 .header-main {
     display: none;
@@ -123,12 +142,12 @@ h6 {
             font-size: 1.25rem;
             letter-spacing: 1px;
             margin-left: 5%;
-            
+
             span {
                 color: #4ac753;
             }
         }
-        
+
         nav {
             float: right;
             a {
@@ -146,9 +165,7 @@ h6 {
 .hero {
     z-index: 1;
     overflow: hidden;
-    background: #1b1b1b url('land.jpg') no-repeat center top;
-    background-size: cover;
-    background-position: 50% 10%;
+    background: #1b1b1b;
     img {
             position: relative;
             // top: -110px;
@@ -157,6 +174,9 @@ h6 {
     div {
         // position: absolute;
         top: 50%;
+        @include break(sm-md) {
+          top: 25%;
+        }
         left: 50%;
         width: 100%;
         z-index: 99;
@@ -166,14 +186,18 @@ h6 {
         @include break(sm) {
             padding: 20%;
         }
-        @include break(md) {
-            padding: 15% 0;
+        @include break(sm-md) {
+          padding-top: 10%;
         }
-        
+        @include break(md) {
+            padding: 7.5% 0;
+        }
+
         p {
             color: $light;
             @include title-font(hero-lg);
             letter-spacing: 5px;
+            line-height: 5rem;
             span {
                 @include title-font(hero-md);
                 letter-spacing: 10px;
@@ -215,61 +239,265 @@ h6 {
                 color: $dark;
             }
         }
+        img {
+          width: 50%;
+          @include break(sm-md) {
+            width: 40%;
+          }
+          @include break(md) {
+            width: 25%;
+          }
+        }
     }
 }
+.hero-home {
+  background: url('land.jpg') no-repeat center top;background-size: cover;
+  background-position: 50% 10%;
+  div {
+
+        // position: absolute;
+        top: 50%;
+        @include break(sm-md) {
+          top: 25%;
+        }
+        left: 50%;
+        width: 100%;
+        z-index: 99;
+        // @include transform(translate(50%,50%));
+        text-align: center;
+        padding: 25% 0;
+        @include break(sm) {
+            padding: 20%;
+        }
+        @include break(md) {
+            padding: 15% 0;
+        }
+  }
+}
+
 
 // Making the Future
 .about {
+  padding: 7em 0;
     div {
-        width: 100%;
+      margin: auto;
+        width: 90%;
         h1 {
             @include title-font(title-lg);
+            font-size: 1.5rem;
             text-align: center;
             color: $dark;
+            letter-spacing: 1px;
+            @include break(sm) {
+              letter-spacing: 3px;
+              font-size: 2.5rem;
+            }
+        }
+        p {
+          text-align: center;
+          font-size: 1.15rem;
+          @include break(sm-md) {
+            font-size: 1.25rem;
+          }
         }
     }
 }
 
 // Widgets
 .widgets {
-    padding-top: 6em;
+    padding: 6em 0;
     width: 100%;
+    background: $light;
+    div {
+      width: 100%;
+      margin: auto;
+      margin-top: 0;
+      @include break(md) {
+          width: 75%;
+      }
+      div {
+          padding: 5px;
+          margin: 1em 0;
+          img {
+              background: $green;
+              border-radius: 50%;
+              width: 30%;
+              margin: auto;
+              margin-left: 35%;
+              @include break(lg) {
+                  width: 20%;
+                  margin-left: 40%;
+              }
+          }
+          div {
+              text-align: center;
+              padding: none;
+              margin: auto;
+              width: 85%;
+              h2 {
+                  color: #3f3f3f;
+                  letter-spacing: 1.5px;
+                  font-weight: 400;
+                  font-size: 1.25rem;
+                  margin-bottom: 10px;
+              }
+              p {
+                  font-weight: 400;
+                  color: #7c7c7c;
+                  margin-top: 1em;
+              }
+          }
+      }
+    }
+}
+
+// Subgroups
+.subgroups {
+  padding: 7em 0;
+  background: $dark;
+  color: $light;
+  text-align: center;
+  h2 {
+    @include title-font(title-md);
+    letter-spacing: 5px;
+    @include break(md) {
+      font-size: 2.5rem;
+    }
+  }
+  .icons {
+    padding: 2em 0 3em 0;
+    width: 90%;
     margin: auto;
     @include break(md) {
-        width: 75%;
+      width: 70%;
     }
-    
     div {
-        padding: 5px;
-        
-        img {
-            background: $green;
-            border-radius: 50%;
-            width: 30%;
-            margin: auto;
-            margin-left: 35%;
-            @include break(lg) {
-                width: 20%;
-                margin-left: 40%;
-            }
-        }
-        div {
-            text-align: center;
-            padding: none;
-            margin: auto;
-            width: 85%;
-            h2 {
-                color: $dark;
-                font-size: 1.5rem;
-                margin-bottom: 10px;
-            }
-            p {
-                font-weight: 400;
-                color: #373D3F;
-                margin-top: 0;
-                @include body-font;
-                font-size: 1rem;
-            }
-        }
+      display: inline-block;
+      width: 50%;
+      @include break(sm) {
+        width: 25%;
+      }
+      img {
+        margin: auto;
+        width: 80%;
+        max-width: 232px;
+      }
     }
+  }
+  .text {
+    margin: auto;
+    padding: 1em;
+    width: 100%;
+    @include break(sm) {
+      width: 80%;
+    }
+    @include break(md) {
+      width: 40%;
+    }
+    div {
+      h3 {
+        margin: auto;
+        width: 80%;
+        @include title-font(title-md);
+        font-weight: 400;
+        padding-bottom: 1.5rem;
+        border-bottom: 2px $highlight solid;
+        letter-spacing: 3px;
+        font-size: 1.5em;
+        @include break(sm) {
+          font-size: 1.75rem;
+          width: 60%;
+          letter-spacing: 5px;
+        }
+      }
+      p {
+        padding-top: 2em;
+        margin: auto;
+        @include break(sm-md) {
+          font-size: 1.25rem;
+        }
+      }
+    }
+  }
+}
+
+// Game
+ .game {
+   padding: 7em 1em;
+   text-align: center;
+   width: 100%;
+   margin: auto;
+   @include break(sm) {
+     width: 80%;
+   }
+   @include break(md) {
+     width: 60%;
+   }
+     h2 {
+       letter-spacing: 3px;
+       @include title-font(title-md);
+       font-size: 1.5rem;
+       @include break(sm) {
+         font-size: 2rem;
+       }
+     }
+     p {
+     }
+ }
+
+// Press Articles
+.press {
+  margin: auto;
+  width: 100%;
+  padding: 4em 1em;
+  @include break(sm-md) {
+    width: 80%;
+  }
+  @include break(md) {
+    width: 60%;
+  }
+  div {
+    padding: 2em 0;
+    padding-top: 4em;
+    overflow: hidden;
+    border-bottom: $highlight-light 2px solid;
+    @include break(sm) {
+      height: 16em;
+    }
+    @include break(md) {
+      height: 18em;
+    }
+    img {
+      float: left;
+      width: 100%;
+      @include break(sm) {
+        width: 35%;
+        height: 100%;
+      }
+    }
+    float: right;
+    div {
+      padding: 1em;
+      padding-top: .25em;
+      width: 100%;
+      height: 13.15em;
+      border: none;
+      @include break(sm) {
+        width: 60%;
+        height: 100%;
+      }
+      h3 {
+        margin: 0;
+        margin-top: .5em;
+        text-align: center;
+        @include title-font(blog-title);
+        @include break(sm) {
+          text-align: left;
+          margin-top: 0;
+        }
+      }
+      p {
+      }
+    }
+  }
 }
