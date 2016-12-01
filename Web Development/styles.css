@@ -626,6 +626,48 @@ p {
       font-size: 1.15rem;
       line-height: 1.75rem; } }
 
+.hidden {
+  display: none; }
+
+@-webkit-keyframes interactiveTransition {
+  25% {
+    opacity: 0; }
+  75% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@-moz-keyframes interactiveTransition {
+  25% {
+    opacity: 0; }
+  75% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@-ms-keyframes interactiveTransition {
+  25% {
+    opacity: 0; }
+  75% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@-o-keyframes interactiveTransition {
+  25% {
+    opacity: 0; }
+  75% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@keyframes interactiveTransition {
+  25% {
+    opacity: 0; }
+  75% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+.interactiveAnimation {
+  animation-name: interactiveTransition;
+  animation-duration: 1s; }
+
 .header-main {
   display: none;
   position: absolute;
@@ -862,28 +904,30 @@ p {
     @media (min-width: 72rem) {
       .subgroups .text {
         width: 40%; } }
-    .subgroups .text div h3 {
-      margin: auto;
-      width: 80%;
-      font-size: 2rem;
-      font-family: Montserrat;
-      font-weight: 700;
-      font-weight: 400;
-      padding-bottom: 1.5rem;
-      border-bottom: 2px #36713a solid;
-      letter-spacing: 3px;
-      font-size: 1.5em; }
-      @media (min-width: 48rem) {
-        .subgroups .text div h3 {
-          font-size: 1.75rem;
-          width: 60%;
-          letter-spacing: 5px; } }
-    .subgroups .text div p {
-      padding-top: 2em;
-      margin: auto; }
-      @media (min-width: 56rem) {
-        .subgroups .text div p {
-          font-size: 1.25rem; } }
+    .subgroups .text div {
+      width: 100%; }
+      .subgroups .text div h3 {
+        margin: auto;
+        width: 80%;
+        font-size: 2rem;
+        font-family: Montserrat;
+        font-weight: 700;
+        font-weight: 400;
+        padding-bottom: 1.5rem;
+        border-bottom: 2px #36713a solid;
+        letter-spacing: 3px;
+        font-size: 1.5em; }
+        @media (min-width: 48rem) {
+          .subgroups .text div h3 {
+            font-size: 1.75rem;
+            width: 60%;
+            letter-spacing: 5px; } }
+      .subgroups .text div p {
+        padding-top: 2em;
+        margin: auto; }
+        @media (min-width: 56rem) {
+          .subgroups .text div p {
+            font-size: 1.25rem; } }
 
 .game {
   padding: 7em 1em;
