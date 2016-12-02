@@ -847,13 +847,13 @@ p {
         .hero div p {
           font-size: 4rem;
           letter-spacing: 7.5px;
-          line-height: 1em; }
+          line-height: 1.15em; }
           .hero div p span {
             letter-spacing: 12.5px;
             font-size: 3rem; } }
       @media (min-width: 72rem) {
         .hero div p {
-          line-height: 1em;
+          line-height: 1.05em;
           font-size: 5.5rem;
           letter-spacing: 10px; }
           .hero div p span {

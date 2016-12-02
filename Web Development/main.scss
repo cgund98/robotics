@@ -276,14 +276,14 @@ p {
             @include break(sm) {
                 font-size: 4rem;
                 letter-spacing: 7.5px;
-                line-height: 1em;
+                line-height: 1.15em;
                 span {
                     letter-spacing: 12.5px;
                     font-size: 3rem;
                 }
             }
             @include break(md) {
-              line-height: 1em;
+              line-height: 1.05em;
                 font-size: 5.5rem;
                 letter-spacing: 10px;
                 span {
