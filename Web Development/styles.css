@@ -831,7 +831,7 @@ p {
       font-family: Montserrat;
       font-weight: 700;
       letter-spacing: 5px;
-      line-height: 5rem; }
+      line-height: 1.25em; }
       .hero div p span {
         font-size: 2.25rem;
         font-family: Montserrat;
@@ -846,12 +846,14 @@ p {
       @media (min-width: 48rem) {
         .hero div p {
           font-size: 4rem;
-          letter-spacing: 7.5px; }
+          letter-spacing: 7.5px;
+          line-height: 1em; }
           .hero div p span {
             letter-spacing: 12.5px;
             font-size: 3rem; } }
       @media (min-width: 72rem) {
         .hero div p {
+          line-height: 1em;
           font-size: 5.5rem;
           letter-spacing: 10px; }
           .hero div p span {
@@ -1245,5 +1247,57 @@ p {
         @media (min-width: 72rem) {
           .outreach div div p {
             height: 7.5em; } }
+
+footer {
+  background: #333;
+  width: 100%; }
+  footer div {
+    margin: auto;
+    width: 90%;
+    color: #f6f6f6; }
+    @media (min-width: 48rem) {
+      footer div {
+        width: 80%; } }
+    @media (min-width: 56rem) {
+      footer div {
+        width: 65%; } }
+    @media (min-width: 72rem) {
+      footer div {
+        width: 50%; } }
+    footer div div {
+      vertical-align: top;
+      display: inline-block;
+      margin: 2em;
+      width: 80%; }
+      @media (min-width: 48rem) {
+        footer div div {
+          margin: 4em; } }
+      @media (min-width: 48rem) {
+        footer div div {
+          width: 40%; } }
+      @media (min-width: 56rem) {
+        footer div div {
+          width: 25%; } }
+      footer div div h3 {
+        width: 100%;
+        border-bottom: 2px #f6f6f6 solid;
+        font-weight: 400; }
+      footer div div a {
+        color: #f6f6f6;
+        font-family: Lato;
+        display: block;
+        font-size: .95rem;
+        text-align: left;
+        padding: 0;
+        margin: 0;
+        border: none;
+        height: 1.5rem; }
+    footer div p {
+      width: 100%;
+      font-size: .85rem;
+      margin: 0;
+      text-align: center;
+      padding: 3em 2em;
+      border-top: 2px #f6f6f6 solid; }
 
 /*# sourceMappingURL=styles.css.map */

@@ -261,7 +261,7 @@ p {
             color: $light;
             @include title-font(hero-lg);
             letter-spacing: 5px;
-            line-height: 5rem;
+            line-height: 1.25em;
             span {
                 @include title-font(hero-md);
                 letter-spacing: 10px;
@@ -276,12 +276,14 @@ p {
             @include break(sm) {
                 font-size: 4rem;
                 letter-spacing: 7.5px;
+                line-height: 1em;
                 span {
                     letter-spacing: 12.5px;
                     font-size: 3rem;
                 }
             }
             @include break(md) {
+              line-height: 1em;
                 font-size: 5.5rem;
                 letter-spacing: 10px;
                 span {
@@ -721,6 +723,65 @@ p {
           height: 7.5em;
         }
       }
+    }
+  }
+}
+
+// Footer
+footer {
+  background: #333;
+  width: 100%;
+  div {
+    margin: auto;
+    width: 90%;
+    @include break(sm) {
+      width: 80%;
+    }
+    @include break(sm-md) {
+      width: 65%;
+    }
+    @include break(md) {
+      width: 50%;
+    }
+    color: $light;
+    div {
+      vertical-align: top;
+      display: inline-block;
+      margin: 2em;
+      @include break(sm) {
+        margin: 4em;
+      }
+      width: 80%;
+      @include break(sm) {
+        width: 40%;
+      }
+      @include break(sm-md) {
+        width: 25%;
+      }
+      h3 {
+        width: 100%;
+        border-bottom: 2px $light solid;
+        font-weight: 400;
+      }
+      a {
+        color: $light;
+        font-family: Lato;
+        display: block;
+        font-size: .95rem;
+        text-align: left;
+        padding: 0;
+        margin: 0;
+        border: none;
+        height: 1.5rem;
+      }
+    }
+    p {
+      width: 100%;
+      font-size: .85rem;
+      margin: 0;
+      text-align: center;
+      padding: 3em 2em;
+      border-top: 2px $light solid;
     }
   }
 }
