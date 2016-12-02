@@ -214,17 +214,70 @@ p {
 
         nav {
             float: right;
-            a {
-                margin: 5em;
-                padding: 1em;
-                font-size: 1rem;
-                letter-spacing: 2px;
-                margin-left: 0%;
+            display: block;
+            div {
+              margin-right: 2.5em;
+              margin-top: 1em;
+              display: inline-block;
+              float: right;
+              width: 200px;
+              &:hover div {
+                // opacity: 1;
+                display: block;
+              }
+              a {
+                  font-size: 1rem;
+                  letter-spacing: 2px;
+                  margin-left: 0%;
+              }
+              i {
+                    position: relative;
+                    top: -1px;
+                }
+              div {
+                overflow: hidden;
+                display: none;
+                // opacity: 0;
+                transition: 2s;
+                float: left;
+                margin-left: -.75em;
+                margin-top: .5em;
+                padding: .5em 1em;
+                // display: none;
+                background: rgba(27,27,27,0.85);
+                width: 120%;
+                a {
+                  display: block;
+                  font-weight: 400;
+                  font-size: .95rem;
+                  padding: .25em 0;
+                  // margin: 0;
+                }
+              }
             }
         }
     }
 }
-
+.mobile-header {
+  .nav-icon {
+    padding: .75em;
+    position: fixed;
+    left: 15%;
+    top: 10%;
+    background: rgba(27,27,27,0.85);
+    z-index: 999;
+    i {
+      color: white;
+    }
+  }
+  .mobile-nav-content {
+    position: fixed;
+    height: 80vh;
+    width: 100vw;
+    z-index: 998;
+    background: rgba(27,27,27,0.95);
+  }
+}
 // Hero Image
 .hero {
     z-index: 1;
@@ -316,6 +369,7 @@ p {
         }
     }
 }
+
 .hero-home {
   background: url('land.jpg') no-repeat center top;background-size: cover;
   background-position: 50% 10%;
@@ -384,20 +438,13 @@ p {
 }
 // Making the Future
 .about {
+  display: block;
   padding: 7em 0;
     div {
       margin: auto;
         width: 95%;
-        text-align: left;
         @include break(sm) {
-          text-align: center;
           width: 80%;
-        }
-        @include break(sm-md) {
-          width: 75%;
-        }
-        @include break(md) {
-          width: 70%;
         }
         h1 {
             @include title-font(title-lg);
@@ -409,7 +456,7 @@ p {
             z-index: 10;
             width: 250px;
             @include break(sm) {
-              width: 500px;
+              width: 550px;
               max-width: 70%
             }
             margin: auto;
@@ -420,6 +467,18 @@ p {
 
         }
         p {
+          margin: auto;
+          text-align: left;
+          @include break(sm) {
+            text-align: center;
+            width: 90%;
+          }
+          @include break(sm-md) {
+            width: 80%;
+          }
+          @include break(md) {
+            width: 75%;
+          }
           text-align: center;
           font-size: 1rem;
           @include break(sm-md) {
@@ -434,6 +493,7 @@ p {
 
 // Widgets
 .widgets {
+  display: block;
     padding: 6em 0;
     width: 100%;
     background: $light;

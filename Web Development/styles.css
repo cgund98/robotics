@@ -791,13 +791,54 @@ p {
       .header-main div a span {
         color: #4ac753; }
     .header-main div nav {
-      float: right; }
-      .header-main div nav a {
-        margin: 5em;
-        padding: 1em;
-        font-size: 1rem;
-        letter-spacing: 2px;
-        margin-left: 0%; }
+      float: right;
+      display: block; }
+      .header-main div nav div {
+        margin-right: 2.5em;
+        margin-top: 1em;
+        display: inline-block;
+        float: right;
+        width: 200px; }
+        .header-main div nav div:hover div {
+          display: block; }
+        .header-main div nav div a {
+          font-size: 1rem;
+          letter-spacing: 2px;
+          margin-left: 0%; }
+        .header-main div nav div i {
+          position: relative;
+          top: -1px; }
+        .header-main div nav div div {
+          overflow: hidden;
+          display: none;
+          transition: 2s;
+          float: left;
+          margin-left: -.75em;
+          margin-top: .5em;
+          padding: .5em 1em;
+          background: rgba(27, 27, 27, 0.85);
+          width: 120%; }
+          .header-main div nav div div a {
+            display: block;
+            font-weight: 400;
+            font-size: .95rem;
+            padding: .25em 0; }
+
+.mobile-header .nav-icon {
+  padding: .75em;
+  position: fixed;
+  left: 15%;
+  top: 10%;
+  background: rgba(27, 27, 27, 0.85);
+  z-index: 999; }
+  .mobile-header .nav-icon i {
+    color: white; }
+.mobile-header .mobile-nav-content {
+  position: fixed;
+  height: 80vh;
+  width: 100vw;
+  z-index: 998;
+  background: rgba(27, 27, 27, 0.95); }
 
 .hero {
   z-index: 1;
@@ -943,21 +984,14 @@ p {
   margin: auto; }
 
 .about {
+  display: block;
   padding: 7em 0; }
   .about div {
     margin: auto;
-    width: 95%;
-    text-align: left; }
+    width: 95%; }
     @media (min-width: 48rem) {
       .about div {
-        text-align: center;
         width: 80%; } }
-    @media (min-width: 56rem) {
-      .about div {
-        width: 75%; } }
-    @media (min-width: 72rem) {
-      .about div {
-        width: 70%; } }
     .about div h1 {
       font-size: 3rem;
       font-family: Montserrat;
@@ -972,15 +1006,27 @@ p {
       margin: auto; }
       @media (min-width: 48rem) {
         .about div h1 {
-          width: 500px;
+          width: 550px;
           max-width: 70%; } }
       @media (min-width: 48rem) {
         .about div h1 {
           letter-spacing: 3px;
           font-size: 2.5rem; } }
     .about div p {
+      margin: auto;
+      text-align: left;
       text-align: center;
       font-size: 1rem; }
+      @media (min-width: 48rem) {
+        .about div p {
+          text-align: center;
+          width: 90%; } }
+      @media (min-width: 56rem) {
+        .about div p {
+          width: 80%; } }
+      @media (min-width: 72rem) {
+        .about div p {
+          width: 75%; } }
       @media (min-width: 56rem) {
         .about div p {
           font-size: 1.15rem; } }
@@ -989,6 +1035,7 @@ p {
           font-size: 1.25rem; } }
 
 .widgets {
+  display: block;
   padding: 6em 0;
   width: 100%;
   background: #f6f6f6; }
