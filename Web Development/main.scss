@@ -90,13 +90,13 @@ $font-sizes: (
     }
     @-moz-keyframes #{$animation-name} {
         @content;
-    }  
+    }
     @-ms-keyframes #{$animation-name} {
         @content;
     }
     @-o-keyframes #{$animation-name} {
         @content;
-    }  
+    }
     @keyframes #{$animation-name} {
         @content;
     }
@@ -169,23 +169,22 @@ p {
   display: none;
 }
 @include keyframes(interactiveTransition) {
-  25% {opacity: 0;}
-  75% {opacity: 0;}
-  100% {opacity: 1;}
+  25% {
+    opacity: 0;
+    @include transform(translateY(10px))
+  }
+  75% {
+    opacity: 0;
+    @include transform(translateY(10px))
+  }
+  100% {
+    opacity: 1;
+    @include transform(translateY(0))
+  }
 }
-// @keyframes interactiveAnimation {
-//   25% {opacity: 0;}
-//   75% {opacity: 0;}
-//   100% {opacity: 1;}
-// }
-// #interactiveWrapper {
-//   animation-name: interactiveTransition;
-//   animation-duration: 1s;
-//   // transition: 1s;
-// }
 .interactiveAnimation {
   animation-name: interactiveTransition;
-  animation-duration: 1s;
+  animation-duration: .75s;
 }
 // Nav Bar
 .header-main {
@@ -338,29 +337,92 @@ p {
         }
   }
 }
-
-
+.lines {
+  position: relative;
+  text-align: center;
+  &:after {
+    content: '';
+    z-index: -10;
+    width: 100%;
+    display: inline-block;
+    border-bottom: 2px solid $highlight-light;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    z-index: 0;
+  }
+}
+.lines-dark {
+  position: relative;
+  text-align: center;
+  &:after {
+    content: '';
+    z-index: -10;
+    width: 100%;
+    display: inline-block;
+    border-bottom: 2px solid $highlight;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    z-index: 0;
+  }
+}
+.lines-text {
+  position: relative;
+  background: #ffffff;
+  z-index: 1;
+}
+.lines-text-dark {
+  position: relative;
+  background: #1b1b1b;
+  z-index: 1;
+  width: 350px;
+  margin: auto;
+}
 // Making the Future
 .about {
   padding: 7em 0;
     div {
       margin: auto;
-        width: 90%;
+        width: 95%;
+        text-align: left;
+        @include break(sm) {
+          text-align: center;
+          width: 80%;
+        }
+        @include break(sm-md) {
+          width: 75%;
+        }
+        @include break(md) {
+          width: 70%;
+        }
         h1 {
             @include title-font(title-lg);
             font-size: 1.5rem;
             text-align: center;
             color: $dark;
             letter-spacing: 1px;
+            background: #ffffff;
+            z-index: 10;
+            width: 250px;
+            @include break(sm) {
+              width: 500px;
+              max-width: 70%
+            }
+            margin: auto;
             @include break(sm) {
               letter-spacing: 3px;
               font-size: 2.5rem;
             }
+
         }
         p {
           text-align: center;
-          font-size: 1.15rem;
+          font-size: 1rem;
           @include break(sm-md) {
+            font-size: 1.15rem;
+          }
+          @include break(md) {
             font-size: 1.25rem;
           }
         }
@@ -415,17 +477,34 @@ p {
     }
 }
 
-// Subgroups
-.subgroups {
+// Interactive
+.interactive {
   padding: 7em 0;
+  height: 57em;
   background: $dark;
   color: $light;
   text-align: center;
-  h2 {
-    @include title-font(title-md);
-    letter-spacing: 5px;
+  div {
+    margin: auto;
+    @include break(sm) {
+      width: 80%;
+    }
+    @include break(sm-md) {
+      width: 70%;
+    }
     @include break(md) {
-      font-size: 2.5rem;
+      width: 60%;
+    }
+    h2 {
+      max-width: 80%;
+      width: 400px;
+      @include title-font(title-md);
+      font-size: 1.5rem;
+      letter-spacing: 5px;
+      @include break(sm) {
+        font-size: 2.5rem;
+        width: 550px;
+      }
     }
   }
   .icons {
@@ -445,6 +524,11 @@ p {
         margin: auto;
         width: 80%;
         max-width: 232px;
+        transition-duration: .25s;
+        transition-timing-function: ease-out;
+        &:hover {
+          @include transform(scale(1.1))
+        }
       }
     }
   }
@@ -461,6 +545,7 @@ p {
     div {
       width: 100%;
       h3 {
+        text-transform: uppercase;
         margin: auto;
         width: 80%;
         @include title-font(title-md);
@@ -478,14 +563,20 @@ p {
       p {
         padding-top: 2em;
         margin: auto;
+        font-size: .85rem;
         @include break(sm-md) {
-          font-size: 1.25rem;
+          font-size: 1.15rem;
         }
       }
     }
   }
 }
-
+.programs {
+  height: 58em;
+  @include break(sm-md) {
+    height: 57em;
+  }
+}
 // Game
  .game {
    padding: 7em 1em;

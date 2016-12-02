@@ -1,59 +1,60 @@
 function interactiveIcons() {
     var wrapper = document.getElementById('interactiveWrapper');
-    var oldName;
+    var oldName = "grid-item--sm-md-span-8 wip";
     var textBody = document.getElementById('interactiveBody');
     var textGroup = document.getElementById('interactiveGroup');
-    var techIcon = document.getElementById('tech-icon');
-    var prIcon = document.getElementById('pr-icon');
-    var programmingIcon = document.getElementById('programming-icon');
-    var electricalIcon = document.getElementById('electrical-icon');
-    var techBody = document.getElementById('tech-body').innerHTML;
-    var prBody = document.getElementById('pr-body').innerHTML;
-    var programmingBody = document.getElementById('programming-body').innerHTML;
-    var electricalBody = document.getElementById('electrical-body').innerHTML;
-    techIcon.addEventListener('click', function(){
+    var icon1 = document.getElementById('icon-1');
+    var icon2 = document.getElementById('icon-2');
+    var icon3 = document.getElementById('icon-3');
+    var icon4 = document.getElementById('icon-4');
+    var body1 = document.getElementById('body-1').innerHTML;
+    var body2 = document.getElementById('body-2').innerHTML;
+    var body3 = document.getElementById('body-3').innerHTML;
+    var body4 = document.getElementById('body-4').innerHTML;
+    var head1 = document.getElementById('head-1').innerHTML;
+    var head2 = document.getElementById('head-2').innerHTML;
+    var head3 = document.getElementById('head-3').innerHTML;
+    var head4 = document.getElementById('head-4').innerHTML;
+    var delay = 750/2;
+
+    icon1.addEventListener('click', function(){
         wrapper.className = oldName;
         wrapper.className += " interactiveAnimation";
-        // window.setTimeout(function() {changeToTech() };, 500);
-        // window.alert(techBody);
+        setTimeout(function() {
+          textGroup.innerHTML = head1;
+          textBody.innerHTML = body1;
+          setTimeout(function() { wrapper.className = oldName; }, delay)
+        }, delay);
     });
-    prIcon.addEventListener('click', function(){
+
+    icon2.addEventListener('click', function(){
         wrapper.className = oldName;
         wrapper.className += " interactiveAnimation";
-        // window.setTimeout(function() {changeToPr() };, 500);
-        // window.alert(techBody);
+        setTimeout(function() {
+          textGroup.innerHTML = head2;
+          textBody.innerHTML = body2;
+          setTimeout(function() { wrapper.className = oldName; }, delay)
+        }, delay);
     });
-    programmingIcon.addEventListener('click', function(){
-        wrapper.className = oldName;
-        wrapper.className += " interactiveAnimation";
-        // window.setTimeout(function() {changeToProgramming() };, 500);
-        // window.alert(techBody);
+
+    icon3.addEventListener('click', function(){
+      wrapper.className = oldName;
+      wrapper.className += " interactiveAnimation";
+      setTimeout(function() {
+        textGroup.innerHTML = head3;
+        textBody.innerHTML = body3;
+        setTimeout(function() { wrapper.className = oldName; }, delay)
+      }, delay);
     });
-    electricalIcon.addEventListener('click', function(){
-        wrapper.className = oldName;
-        wrapper.className += " interactiveAnimation";
-        // window.setTimeout(function() {changeToElectrical() };, 500);
-        // window.alert(techBody);
+
+    icon4.addEventListener('click', function(){
+      wrapper.className = oldName;
+      wrapper.className += " interactiveAnimation";
+      setTimeout(function() {
+        textGroup.innerHTML = head4;
+        textBody.innerHTML = body4;
+        setTimeout(function() { wrapper.className = oldName; }, delay)
+      }, delay);
     });
-    function changeToTech() {
-        textGroup.innerHTML = "Tech";
-        textBody.innerHTML = techBody;
-        // wrapper.className = oldName;
-    }
-    function changeToPr() {
-        textGroup.innerHTML = "Public Relations";
-        textBody.innerHTML = prBody;
-        // wrapper.className = oldName;
-    }
-    function changeToProgramming() {
-        textGroup.innerHTML = "Programming";
-        textBody.innerHTML = programmingBody;
-        // wrapper.className = oldName;
-    }
-    function changeToElectrical() {
-        textGroup.innerHTML = "Electrical";
-        textBody.innerHTML = electricalBody;
-        // wrapper.className = oldName;
-    }
 }
 interactiveIcons();
