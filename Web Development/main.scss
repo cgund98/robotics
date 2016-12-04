@@ -282,6 +282,9 @@ p {
     background: rgba(27,27,27,0.95);
     transition: 1s;
     nav {
+      position: relative;
+      @include transform(translateY(-50%));
+      top: 50%;
       text-align: center;
       color: $light;
       div {
