@@ -599,7 +599,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+a {
   font-family: Montserrat;
   font-weight: 700; }
 
@@ -832,13 +833,37 @@ p {
   background: rgba(27, 27, 27, 0.85);
   z-index: 999; }
   .mobile-header .nav-icon i {
+    height: 100%;
+    width: 100%;
     color: white; }
 .mobile-header .mobile-nav-content {
+  padding: 5em 1em;
   position: fixed;
-  height: 80vh;
+  height: 30em;
   width: 100vw;
   z-index: 998;
-  background: rgba(27, 27, 27, 0.95); }
+  background: rgba(27, 27, 27, 0.95);
+  transition: 1s; }
+  .mobile-header .mobile-nav-content nav {
+    text-align: center;
+    color: #f6f6f6; }
+    .mobile-header .mobile-nav-content nav div {
+      margin: 1em; }
+      .mobile-header .mobile-nav-content nav div a {
+        display: block;
+        font-size: 1.25rem;
+        color: #f6f6f6;
+        letter-spacing: 1px; }
+      .mobile-header .mobile-nav-content nav div div {
+        transition: 1s;
+        height: 0;
+        overflow: hidden;
+        padding: 0;
+        margin-top: .5em;
+        padding-bottom: 0; }
+        .mobile-header .mobile-nav-content nav div div a {
+          font-size: 1rem;
+          margin: .25em 0; }
 
 .hero {
   z-index: 1;
@@ -1014,6 +1039,7 @@ p {
           font-size: 2.5rem; } }
     .about div p {
       margin: auto;
+      margin-top: 1em;
       text-align: left;
       text-align: center;
       font-size: 1rem; }

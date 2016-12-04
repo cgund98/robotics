@@ -140,7 +140,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+a {
     font-family: Montserrat;
     font-weight: 700;
 }
@@ -267,15 +268,44 @@ p {
     background: rgba(27,27,27,0.85);
     z-index: 999;
     i {
+      height: 100%;
+      width: 100%;
       color: white;
     }
   }
   .mobile-nav-content {
+    padding: 5em 1em;
     position: fixed;
-    height: 80vh;
+    height: 30em;
     width: 100vw;
     z-index: 998;
     background: rgba(27,27,27,0.95);
+    transition: 1s;
+    nav {
+      text-align: center;
+      color: $light;
+      div {
+        margin: 1em;
+        a {
+          display: block;
+          font-size: 1.25rem;
+          color: $light;
+          letter-spacing: 1px;
+        }
+        div {
+          transition: 1s;
+          height: 0;
+          overflow: hidden;
+          padding: 0;
+          margin-top: .5em;
+          padding-bottom: 0;
+          a {
+            font-size: 1rem;
+            margin: .25em 0;
+          }
+        }
+      }
+    }
   }
 }
 // Hero Image
@@ -468,6 +498,7 @@ p {
         }
         p {
           margin: auto;
+          margin-top: 1em;
           text-align: left;
           @include break(sm) {
             text-align: center;

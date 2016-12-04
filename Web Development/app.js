@@ -57,4 +57,22 @@ function interactiveIcons() {
       }, delay);
     });
 }
+function mobileNav() {
+  var dropdownChevron = document.getElementsByClassName("dropdown-chevron");
+  var oldClass = "fa fa-chevron-down dropdown-chevron";
+  var newClass = "fa fa-chevron-up dropdown-chevron";
+  Array.prototype.forEach.call(dropdownChevron, function(el) {
+    el.addEventListener('click', function(event) {
+      event.preventDefault();
+      var parent = this.parentElement.parentElement;
+      if (parent.children[1].style.height == '3em') {
+        parent.children[1].style.height = '0';
+      } else {
+        parent.children[1].style.height = '3em';
+      }
+
+    })
+  });
+}
 interactiveIcons();
+mobileNav();
