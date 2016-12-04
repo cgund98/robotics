@@ -59,16 +59,35 @@ function interactiveIcons() {
 }
 function mobileNav() {
   var dropdownChevron = document.getElementsByClassName("dropdown-chevron");
-  var oldClass = "fa fa-chevron-down dropdown-chevron";
-  var newClass = "fa fa-chevron-up dropdown-chevron";
+  var oldDropdownClass = "fa fa-chevron-down dropdown-chevron";
+  var newDropdownClass = "fa fa-chevron-up dropdown-chevron";
+  var navIcon = document.getElementsByClassName("nav-icon")[0];
+  var navContent = document.getElementsByClassName("mobile-nav-content")[0];
+  var oldNavClass = "mobile-nav-content";
+  var newNavClass = "mobile-nav-content show-nav";
+  navIcon.addEventListener('click', function(event) {
+    if(navContent.style.height == "") {
+      navContent.style.height = "25em";
+      navContent.style.padding = "5em 1em";
+      navContent.style.opacity = "1"
+      navIcon.style.background = "none";
+    } else {
+      navContent.style.height = "";
+      navContent.style.padding = "0";
+      navContent.style.opacity = "0";
+      navIcon.style.background = "rgba(27,27,27,0.85)"
+    }
+  })
   Array.prototype.forEach.call(dropdownChevron, function(el) {
     el.addEventListener('click', function(event) {
       event.preventDefault();
       var parent = this.parentElement.parentElement;
       if (parent.children[1].style.height == '3em') {
         parent.children[1].style.height = '0';
+        el.className = oldDropdownClass;
       } else {
         parent.children[1].style.height = '3em';
+        el.className = newDropdownClass;
       }
 
     })

@@ -261,6 +261,7 @@ p {
 }
 .mobile-header {
   .nav-icon {
+    transition: 1s;
     padding: .75em;
     position: fixed;
     left: 15%;
@@ -274,13 +275,15 @@ p {
     }
   }
   .mobile-nav-content {
-    padding: 5em 1em;
+    overflow: hidden;
+    padding: 0;
     position: fixed;
-    height: 30em;
+    height: 0;
     width: 100vw;
     z-index: 998;
     background: rgba(27,27,27,0.95);
     transition: 1s;
+    opacity: 0;
     nav {
       position: relative;
       @include transform(translateY(-50%));
@@ -291,9 +294,15 @@ p {
         margin: 1em;
         a {
           display: block;
-          font-size: 1.25rem;
+          font-size: 1.15rem;
           color: $light;
           letter-spacing: 1px;
+          i {
+            position: relative;
+            top: -2px;
+            height: 1.15em;
+            width: 1.35em;
+          }
         }
         div {
           transition: 1s;
@@ -310,6 +319,9 @@ p {
       }
     }
   }
+}
+.show {
+  height: 25em;
 }
 // Hero Image
 .hero {

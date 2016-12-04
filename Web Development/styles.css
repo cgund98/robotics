@@ -826,6 +826,7 @@ p {
             padding: .25em 0; }
 
 .mobile-header .nav-icon {
+  transition: 1s;
   padding: .75em;
   position: fixed;
   left: 15%;
@@ -837,13 +838,15 @@ p {
     width: 100%;
     color: white; }
 .mobile-header .mobile-nav-content {
-  padding: 5em 1em;
+  overflow: hidden;
+  padding: 0;
   position: fixed;
-  height: 30em;
+  height: 0;
   width: 100vw;
   z-index: 998;
   background: rgba(27, 27, 27, 0.95);
-  transition: 1s; }
+  transition: 1s;
+  opacity: 0; }
   .mobile-header .mobile-nav-content nav {
     position: relative;
     -moz-transform: translateY(-50%);
@@ -858,9 +861,14 @@ p {
       margin: 1em; }
       .mobile-header .mobile-nav-content nav div a {
         display: block;
-        font-size: 1.25rem;
+        font-size: 1.15rem;
         color: #f6f6f6;
         letter-spacing: 1px; }
+        .mobile-header .mobile-nav-content nav div a i {
+          position: relative;
+          top: -2px;
+          height: 1.15em;
+          width: 1.35em; }
       .mobile-header .mobile-nav-content nav div div {
         transition: 1s;
         height: 0;
@@ -871,6 +879,9 @@ p {
         .mobile-header .mobile-nav-content nav div div a {
           font-size: 1rem;
           margin: .25em 0; }
+
+.show {
+  height: 25em; }
 
 .hero {
   z-index: 1;
