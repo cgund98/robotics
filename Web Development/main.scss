@@ -218,7 +218,7 @@ p {
             display: block;
             div {
               margin-right: 2.5em;
-              margin-top: 1em;
+              margin-top: .25em;
               display: inline-block;
               float: right;
               width: 200px;
@@ -236,6 +236,7 @@ p {
                     top: -1px;
                 }
               div {
+                z-index: 100;
                 overflow: hidden;
                 display: none;
                 // opacity: 0;
@@ -245,7 +246,7 @@ p {
                 margin-top: .5em;
                 padding: .5em 1em;
                 // display: none;
-                background: rgba(27,27,27,0.85);
+                background: $dark;
                 width: 120%;
                 a {
                   display: block;
@@ -327,6 +328,12 @@ p {
 }
 .show {
   height: 25em;
+}
+.header-background {
+  background: $dark;
+  width: 100%;
+  height: 3.75em;
+  z-index: 1;
 }
 // Hero Image
 .hero {
@@ -798,7 +805,79 @@ p {
     }
   }
 }
-
+// Post
+.post {
+  background: $light;
+  padding-bottom: 5em;
+  .post-img {
+    position: relative;
+    margin: auto;
+    vertical-align: bottom;
+    img {
+      width: 100%;
+      background: $dark;
+    }
+    h2 {
+      font-weight: 400;
+      font-size: 2em;
+      background: rgba(27,27,27,0.85);
+      letter-spacing: 5px;
+      width: 100%;
+      padding: 2.5em 0;
+      margin: auto;
+      text-align: center;
+      position: absolute;
+      bottom: 0px;
+      vertical-align: bottom;
+      color: $light;
+      text-transform: uppercase;
+    }
+  }
+  .post-text {
+    padding-top: 3em;
+    @include break(sm) {
+      margin-left: 16.6666%;
+    }
+    p {
+      margin: auto;
+      padding-top: 3em;
+      padding: 0 3em;
+    }
+  }
+  .recent-posts {
+    display: none;
+    @include break(sm) {
+      display: block;
+    }
+    padding-top: 3em;
+    float: left;
+    h2 {
+      width: 70%;
+      margin: auto;
+      text-align: center;
+    }
+    div {
+      position: relative;
+      img {
+        width: 100%;
+        background: $dark;
+      }
+      h3 {
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 1.15em;
+        // font-weight: 400;
+        letter-spacing: 3px;
+        color: white;
+        position: absolute;
+        width: 100%;
+        padding: .5em 0;
+        background: rgba(27,27,27,0.85);
+        bottom: .25em;
+      }
+    }
+  }
+}
 // Footer
 footer {
   background: #333;
@@ -836,8 +915,9 @@ footer {
         font-weight: 400;
       }
       a {
+        font-weight: 400;
         color: $light;
-        font-family: Lato;
+        font-family: Montserrat;
         display: block;
         font-size: .95rem;
         text-align: left;

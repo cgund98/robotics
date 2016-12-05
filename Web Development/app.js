@@ -23,7 +23,7 @@ function interactiveIcons() {
         setTimeout(function() {
           textGroup.innerHTML = head1;
           textBody.innerHTML = body1;
-          setTimeout(function() { wrapper.className = oldName; }, delay)
+          setTimeout(function() { wrapper.className = oldName; }, delay);
         }, delay);
     });
 
@@ -33,7 +33,7 @@ function interactiveIcons() {
         setTimeout(function() {
           textGroup.innerHTML = head2;
           textBody.innerHTML = body2;
-          setTimeout(function() { wrapper.className = oldName; }, delay)
+          setTimeout(function() { wrapper.className = oldName; }, delay);
         }, delay);
     });
 
@@ -43,7 +43,7 @@ function interactiveIcons() {
       setTimeout(function() {
         textGroup.innerHTML = head3;
         textBody.innerHTML = body3;
-        setTimeout(function() { wrapper.className = oldName; }, delay)
+        setTimeout(function() { wrapper.className = oldName; }, delay);
       }, delay);
     });
 
@@ -53,7 +53,7 @@ function interactiveIcons() {
       setTimeout(function() {
         textGroup.innerHTML = head4;
         textBody.innerHTML = body4;
-        setTimeout(function() { wrapper.className = oldName; }, delay)
+        setTimeout(function() { wrapper.className = oldName; }, delay);
       }, delay);
     });
 }
@@ -69,15 +69,15 @@ function mobileNav() {
     if(navContent.style.height == "") {
       navContent.style.height = "25em";
       // navContent.style.padding = "5em 1em";
-      navContent.style.opacity = "1"
+      navContent.style.opacity = "1";
       navIcon.style.background = "none";
     } else {
       navContent.style.height = "";
       // navContent.style.padding = "0";
       navContent.style.opacity = "0";
-      navIcon.style.background = "rgba(27,27,27,0.85)"
+      navIcon.style.background = "rgba(27,27,27,0.85)";
     }
-  })
+  });
   Array.prototype.forEach.call(dropdownChevron, function(el) {
     el.addEventListener('click', function(event) {
       event.preventDefault();
@@ -90,10 +90,10 @@ function mobileNav() {
         el.className = newDropdownClass;
       }
 
-    })
+    });
   });
 }
-if (document.getElementById('interactive-wrapper')) {
+if (document.getElementById('interactiveWrapper')) {
 interactiveIcons();
 }
 mobileNav();
