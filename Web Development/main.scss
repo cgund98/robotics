@@ -28,7 +28,7 @@ $fonts: (
     body: Lato
 );
 $font-sizes: (
-    body-text: 1rem,
+    body-text: 1.15rem,
     title-lg: 3rem,
     title-md: 2rem,
     title-sm: 1rem,
@@ -160,7 +160,7 @@ a {
 p {
     font-size: #{map-get($font-sizes, body-text)};
     font-family: Lato;
-    line-height: 1.25rem;
+    line-height: 1.75rem;
     @include break(sm) {
       font-size: 1.15rem;
       line-height: 1.75rem;
@@ -741,7 +741,7 @@ p {
 .outreach {
   margin: auto;
   width: 100%;
-  padding: 2em 1em;
+  padding: 2em 0em;
   @include break(sm) {
     padding: 4em 1em;
   }
@@ -775,7 +775,7 @@ p {
     }
     float: right;
     div {
-      padding: 1em;
+      padding: 1 0em;
       padding-top: .25em;
       width: 100%;
       // height: 9em;
@@ -792,7 +792,7 @@ p {
         }
       }
       p {
-        height: 5em;
+        height: 7.5em;
         text-align: center;
         overflow: hidden;
         @include break(sm) {
@@ -819,11 +819,11 @@ p {
     }
     h2 {
       font-weight: 400;
-      font-size: 2em;
+      font-size: 1.25em;
       background: rgba(27,27,27,0.85);
       letter-spacing: 5px;
       width: 100%;
-      padding: 2.5em 0;
+      padding: 1.25em 0;
       margin: auto;
       text-align: center;
       position: absolute;
@@ -831,6 +831,18 @@ p {
       vertical-align: bottom;
       color: $light;
       text-transform: uppercase;
+      @include break(sm) {
+        font-size: 1.75em;
+        padding: 1.75em 0;
+      }
+      @include break(sm-md) {
+        font-size: 2em;
+        padding: 2em 0;
+      }
+      @include break(md) {
+        font-size: 2em;
+        padding: 2.5em 0;
+      }
     }
   }
   .post-text {
@@ -841,7 +853,16 @@ p {
     p {
       margin: auto;
       padding-top: 3em;
-      padding: 0 3em;
+      @include break(sm) {
+        padding: 0 3em;
+      }
+      @include break(sm-md) {
+        padding: 0 4em;
+      }
+      @include break(md) {
+        padding: 0 5em;
+      }
+      padding: 0 2em;
     }
   }
   .recent-posts {
@@ -852,35 +873,52 @@ p {
     padding-top: 3em;
     float: left;
     h2 {
+      @include break(sm) {
+        font-size: 1.2rem;
+      }
+      @include break(md) {
+        font-size: 1.35rem;
+      }
       width: 70%;
       margin: auto;
       text-align: center;
     }
     div {
+      overflow: hidden;
       position: relative;
       img {
         width: 100%;
         background: $dark;
       }
       h3 {
+        font-size: .85rem;
         text-transform: uppercase;
         text-align: center;
-        font-size: 1.15em;
         // font-weight: 400;
         letter-spacing: 3px;
         color: white;
         position: absolute;
         width: 100%;
-        padding: .5em 0;
+        padding: .15em 0;
         background: rgba(27,27,27,0.85);
-        bottom: .25em;
+        bottom: 0px;
+        @include break(sm-md) {
+          padding: .5em 0;
+        }
+        @include break(md) {
+          font-size: 1.15rem;
+          padding: .75em 0;
+        }
       }
+    }
+    .lines {
+      margin-bottom: 2em;
     }
   }
 }
 // Footer
 footer {
-  background: #333;
+  background: $dark;
   width: 100%;
   div {
     margin: auto;
