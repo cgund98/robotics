@@ -1,3 +1,3 @@
 # 2017-website
 
-HBR 2017 Website
+The 2017 complete redesign and redevelopment of the HBR website.
