@@ -991,46 +991,6 @@ p {
       .hero-home div {
         padding: 15% 0; } }
 
-.lines {
-  position: relative;
-  text-align: center; }
-  .lines:after {
-    content: '';
-    z-index: -10;
-    width: 100%;
-    display: inline-block;
-    border-bottom: 2px solid #92d096;
-    position: absolute;
-    left: 0;
-    top: 50%;
-    z-index: 0; }
-
-.lines-dark {
-  position: relative;
-  text-align: center; }
-  .lines-dark:after {
-    content: '';
-    z-index: -10;
-    width: 100%;
-    display: inline-block;
-    border-bottom: 2px solid #36713a;
-    position: absolute;
-    left: 0;
-    top: 50%;
-    z-index: 0; }
-
-.lines-text {
-  position: relative;
-  background: #ffffff;
-  z-index: 1; }
-
-.lines-text-dark {
-  position: relative;
-  background: #1b1b1b;
-  z-index: 1;
-  width: 350px;
-  margin: auto; }
-
 .about {
   display: block;
   padding: 7em 0; }
@@ -1309,6 +1269,8 @@ p {
   @media (min-width: 84rem) {
     .outreach {
       width: 60%; } }
+  .outreach .lines {
+    padding: 0; }
   .outreach div {
     padding: 1em 2em;
     padding-top: 4em;
@@ -1395,5 +1357,82 @@ footer {
       text-align: center;
       padding: 3em 2em;
       border-top: 2px #f6f6f6 solid; }
+
+.press .lines {
+  position: relative;
+  padding: 0;
+  width: 100%;
+  height: auto;
+  border: none; }
+  .press .lines .lines-text {
+    width: 70%; }
+    @media (min-width: 48rem) {
+      .press .lines .lines-text {
+        width: 60%; } }
+    @media (min-width: 56rem) {
+      .press .lines .lines-text {
+        width: 50%; } }
+    @media (min-width: 72rem) {
+      .press .lines .lines-text {
+        width: 45%; } }
+
+.outreach .lines {
+  position: relative;
+  padding: 0;
+  width: 100%;
+  height: auto;
+  border: none; }
+  .outreach .lines .lines-text {
+    width: 70%; }
+    @media (min-width: 48rem) {
+      .outreach .lines .lines-text {
+        width: 60%; } }
+    @media (min-width: 56rem) {
+      .outreach .lines .lines-text {
+        width: 50%; } }
+    @media (min-width: 72rem) {
+      .outreach .lines .lines-text {
+        width: 45%; } }
+
+.lines {
+  position: relative;
+  text-align: center; }
+  .lines:after {
+    content: '';
+    z-index: -10;
+    width: 100%;
+    display: inline-block;
+    border-bottom: 2px solid #92d096;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    z-index: 0; }
+
+.lines-dark {
+  position: relative;
+  text-align: center; }
+  .lines-dark:after {
+    content: '';
+    z-index: -10;
+    width: 100%;
+    display: inline-block;
+    border-bottom: 2px solid #36713a;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    z-index: 0; }
+
+.lines-text {
+  position: relative;
+  background: #ffffff;
+  z-index: 1;
+  margin: auto; }
+
+.lines-text-dark {
+  position: relative;
+  background: #1b1b1b;
+  z-index: 1;
+  width: 350px;
+  margin: auto; }
 
 /*# sourceMappingURL=styles.css.map */

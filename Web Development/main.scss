@@ -444,48 +444,6 @@ p {
         }
   }
 }
-.lines {
-  position: relative;
-  text-align: center;
-  &:after {
-    content: '';
-    z-index: -10;
-    width: 100%;
-    display: inline-block;
-    border-bottom: 2px solid $highlight-light;
-    position: absolute;
-    left: 0;
-    top: 50%;
-    z-index: 0;
-  }
-}
-.lines-dark {
-  position: relative;
-  text-align: center;
-  &:after {
-    content: '';
-    z-index: -10;
-    width: 100%;
-    display: inline-block;
-    border-bottom: 2px solid $highlight;
-    position: absolute;
-    left: 0;
-    top: 50%;
-    z-index: 0;
-  }
-}
-.lines-text {
-  position: relative;
-  background: #ffffff;
-  z-index: 1;
-}
-.lines-text-dark {
-  position: relative;
-  background: #1b1b1b;
-  z-index: 1;
-  width: 350px;
-  margin: auto;
-}
 // Making the Future
 .about {
   display: block;
@@ -789,6 +747,9 @@ p {
   @include break(md-lg) {
     width: 60%;
   }
+  .lines {
+    padding: 0;
+  }
   div {
     padding: 1em 2em;
     padding-top: 4em;
@@ -895,4 +856,86 @@ footer {
       border-top: 2px $light solid;
     }
   }
+}
+// lines
+.press .lines {
+  position: relative;
+  padding: 0;
+  width: 100%;
+  height: auto;
+  border: none;
+  .lines-text {
+    width: 70%;
+    @include break(sm) {
+      width: 60%;
+    }
+    @include break(sm-md) {
+      width: 50%;
+    }
+    @include break(md) {
+      width: 45%;
+    }
+  }
+}
+.outreach .lines {
+  position: relative;
+  padding: 0;
+  width: 100%;
+  height: auto;
+  border: none;
+  .lines-text {
+    width: 70%;
+    @include break(sm) {
+      width: 60%;
+    }
+    @include break(sm-md) {
+      width: 50%;
+    }
+    @include break(md) {
+      width: 45%;
+    }
+  }
+}
+.lines {
+  position: relative;
+  text-align: center;
+  &:after {
+    content: '';
+    z-index: -10;
+    width: 100%;
+    display: inline-block;
+    border-bottom: 2px solid $highlight-light;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    z-index: 0;
+  }
+}
+.lines-dark {
+  position: relative;
+  text-align: center;
+  &:after {
+    content: '';
+    z-index: -10;
+    width: 100%;
+    display: inline-block;
+    border-bottom: 2px solid $highlight;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    z-index: 0;
+  }
+}
+.lines-text {
+  position: relative;
+  background: #ffffff;
+  z-index: 1;
+  margin: auto;
+}
+.lines-text-dark {
+  position: relative;
+  background: #1b1b1b;
+  z-index: 1;
+  width: 350px;
+  margin: auto;
 }
