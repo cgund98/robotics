@@ -93,5 +93,7 @@ function mobileNav() {
     })
   });
 }
+if (document.getElementById('interactive-wrapper')) {
 interactiveIcons();
+}
 mobileNav();
