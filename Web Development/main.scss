@@ -260,7 +260,12 @@ p {
     }
 }
 .mobile-header {
+  display: block;
+  @include break(sm-md) {
+    display: none;
+  }
   .nav-icon {
+
     transition: 1s;
     padding: .75em;
     position: fixed;

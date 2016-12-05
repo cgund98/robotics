@@ -68,12 +68,12 @@ function mobileNav() {
   navIcon.addEventListener('click', function(event) {
     if(navContent.style.height == "") {
       navContent.style.height = "25em";
-      navContent.style.padding = "5em 1em";
+      // navContent.style.padding = "5em 1em";
       navContent.style.opacity = "1"
       navIcon.style.background = "none";
     } else {
       navContent.style.height = "";
-      navContent.style.padding = "0";
+      // navContent.style.padding = "0";
       navContent.style.opacity = "0";
       navIcon.style.background = "rgba(27,27,27,0.85)"
     }
@@ -82,11 +82,11 @@ function mobileNav() {
     el.addEventListener('click', function(event) {
       event.preventDefault();
       var parent = this.parentElement.parentElement;
-      if (parent.children[1].style.height == '3em') {
+      if (parent.children[1].style.height == '3.5em') {
         parent.children[1].style.height = '0';
         el.className = oldDropdownClass;
       } else {
-        parent.children[1].style.height = '3em';
+        parent.children[1].style.height = '3.5em';
         el.className = newDropdownClass;
       }
 
