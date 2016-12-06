@@ -97,3 +97,4 @@ if (document.getElementById('interactiveWrapper')) {
 interactiveIcons();
 }
 mobileNav();
+window.alert("ran");

@@ -15,21 +15,21 @@
             <div class="widgets">
               <div class="grid">
                 <div class="grid__item--sm-span-4">
-                    <img src="Icons/award.png" />
+                    <%= image_tag("award.png") %>
                     <div>
                         <h2>AWARD WINNING</h2>
                         <p>Harrison Boiler Robotics has recieved countless award over the years including Chairman's, Business, Automation.  Take a look at the full list here.</p>
                     </div>
                 </div>
                 <div class="grid__item--sm-span-4">
-                    <img src="Icons/award.png" />
+                    <%= image_tag("award.png") %>
                     <div>
                         <h2>OUR MISSION</h2>
                         <p>Our mission is to promote a strong, unified team which works together to accomplish worthwhile goals.</p>
                     </div>
                 </div>
                 <div class="grid__item--sm-span-4">
-                    <img src="Icons/award.png" />
+                    <%= image_tag("award.png") %>
                     <div>
                         <h2>IMPRESSIVE TITLE</h2>
                         <p>Our mission is to promote a strong, unified team which works together to accomplish worthwhile goals.</p>
@@ -43,20 +43,24 @@
               </div>
               <div class="icons grid">
                 <div>
-                  <img src="Icons/tech.png" id="icon-1"/>
+                  <!--<img src="tech.png" id="icon-1"/>-->
+                  <%= image_tag('tech.png', id:"icon-1") %>
                 </div>
                 <div>
-                  <img src="Icons/pr.png" id="icon-2"/>
+                  <!--<img src="pr.png" id="icon-2"/>-->
+                  <%= image_tag('pr.png', id:"icon-2") %>
                 </div>
                 <div>
-                  <img src="Icons/programming.png" id="icon-3"/>
+                  <!--<img src="programming.png" id="icon-3"/>-->
+                  <%= image_tag('programming.png', id:"icon-3") %>
                 </div>
                 <div>
-                  <img src="Icons/electrical.png" id="icon-4"/>
+                  <!--<img src="electrical.png" id="icon-4"/>-->
+                  <%= image_tag('electrical.png', id:"icon-4") %>
                 </div>
               </div>
               <div class="text grid">
-                <div class="grid-item--sm-span-8" onload="interactiveIcons()" id="interactiveWrapper">
+                <div class="grid-item--sm-span-8" onload="interactive()" id="interactiveWrapper">
                   <h3 id="interactiveGroup">Pick a group</h3>
                   <p id="interactiveBody">Click on one of the icons to view a subgroup's description.</p>
                   <div class="hidden">
