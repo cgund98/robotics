@@ -8,4 +8,5 @@ class ApplicationController < ActionController::Base
   end
   def require_user
     redirect_to '/' unless current_user
+  end
 end
