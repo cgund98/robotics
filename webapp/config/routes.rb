@@ -4,6 +4,10 @@ Rails.application.routes.draw do
     get 'first' => 'pages#first'
     get 'press' => 'pages#press'
     get 'outreach' => 'pages#outreach'
+    get 'press' => 'pages#viewpress'
+    get 'press/new' => 'pages#newpost'
+    post 'press' => 'pages#createpost'
+    get 'calendar' => 'pages#calendar'
 
     get 'signup' => 'users#signup'
     resources :users
