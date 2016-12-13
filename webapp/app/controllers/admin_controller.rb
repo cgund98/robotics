@@ -1,6 +1,6 @@
 class AdminController < ApplicationController
-    before_action :require_user
-    
+    before_action :current_user
+
     def home
     end
 end

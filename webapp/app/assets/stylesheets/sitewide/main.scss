@@ -8,7 +8,7 @@
 // ---Imports---
 @import url('https://fonts.googleapis.com/css?family=Lato|Montserrat');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
-
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500,700,800');
 // ---Variables---
 $dark: #1b1b1b;
 $light: #f6f6f6;
@@ -28,7 +28,7 @@ $breakpoints: (
 );
 $fonts: (
     title: Montserrat,
-    body: Lato
+    body: Raleway
 );
 $font-sizes: (
     body-text: 1.15rem,
@@ -276,7 +276,7 @@ p {
     left: 15%;
     top: 10%;
     background: rgba(27,27,27,0.85);
-    z-index: 999;
+    z-index: 501;
     i {
       height: 100%;
       width: 100%;
@@ -289,7 +289,7 @@ p {
     position: fixed;
     height: 0;
     width: 100vw;
-    z-index: 998;
+    z-index: 500;
     background: rgba(27,27,27,0.95);
     transition: 1s;
     opacity: 0;
@@ -1060,7 +1060,102 @@ footer {
   width: 350px;
   margin: auto;
 }
-.sign-up{
-height: 10em;
-padding: 10em;
+// Admin and Login
+.no-header {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 600;
+  background: #f6f6f6;
+  box-sizing: content-box;
 }
+.back-home {
+  position: absolute;
+  color: $light;
+  font-size: 1.05em;
+  left: 2em;
+  top: .25em;
+  padding: .25em 0;
+  font-weight: 700;
+  letter-spacing: 1px;
+  width: 100%;
+  i {
+    top: .25em;
+    position: relative;
+    margin-right: .25em;
+  }
+}
+.sign-up{
+  position: absolute;
+  top: 32%;
+  left: 50%;
+  @include transform(translate(-50%));
+  margin: auto;
+  width: 300px;
+  @include break(sm-md) {
+    top: 40%;
+  }
+  form {
+    padding: 0 2em;
+    @include break(sm) {
+      padding: 0;
+    }
+    ::-webkit-input-placeholder { /* Chrome */
+      color: #f1f1f1;
+    }
+    :-ms-input-placeholder { /* IE 10+ */
+      color: #f1f1f1;
+    }
+    ::-moz-placeholder { /* Firefox 19+ */
+      color: #f1f1f1;
+      opacity: 1;
+    }
+    :-moz-placeholder { /* Firefox 4 - 18 */
+      color: #f1f1f1;
+      opacity: 1;
+    }
+    label {
+      @include transform(translateX(-50%));
+      position: relative;
+      left: 22%;
+      bottom: 1em;
+      font-family: Raleway;
+      font-size: 2.5em;
+      font-weight: 900;
+      color: $light;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      @include break(sm) {
+        left: 27.5%;
+      }
+    }
+    input {
+      font-family: Raleway;
+      font-size: 1.15em;
+      font-weight: 600;
+      color: $light;
+      padding: 1em;
+      margin-top: .5em;
+      border: none;
+      border-bottom: 3px solid $light;
+      background: none;
+      width: 100%;
+      margin: auto;
+      display: block;
+    }
+    input:focus {
+      outline: none;
+    }
+    .btn-submit {
+      // background: $light;
+      margin-top: 2em;
+      border: 3px $light solid;
+      transition: .25s;
+      &:hover {
+        background: $light;
+        color: #222222;
+      }
+    }
+  }
+}
+.new-leaf-gradient { background: -webkit-linear-gradient(90deg,#00537E 10%,#3AA17E 90%); background: linear-gradient(90deg,#00537E 10%,#3AA17E 90%); }

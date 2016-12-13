@@ -1,3 +1,167 @@
 // Place all the styles related to the Admin controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+// Variables
+$light: #f6f6f6;
+$dark: #222222;
+$breakpoints: (
+  xs: 32rem,
+  sm: 48rem,
+  sm-md: 56rem,
+  md: 72rem,
+  md-lg: 84rem,
+  lg: 96rem,
+  xl: 102rem,
+  xx: 120rem
+);
+
+$items: 12;
+.grid {
+    display: flex;
+    flex-flow: row wrap;
+}
+// Mixins
+
+@mixin break($size) {
+  @media (min-width: map-get($breakpoints, $size)) {
+    @content;
+  }
+}
+@mixin f-size($font-size) {
+    font-size: #{$font-size};
+}
+
+@mixin title-font($size) {
+    font-size: #{map-get($font-sizes, $size)};
+    font-family: Montserrat;
+    font-weight: 700;
+}
+@mixin transform($transforms) {
+	   -moz-transform: $transforms;
+	     -o-transform: $transforms;
+	    -ms-transform: $transforms;
+	-webkit-transform: $transforms;
+          transform: $transforms;
+}
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+@mixin transition-property($property...) {
+    -moz-transition-property:    $property;
+    -o-transition-property:      $property;
+    -webkit-transition-property: $property;
+    transition-property:         $property;
+}
+@mixin transition-duration($duration...) {
+    -moz-transition-property:    $duration;
+    -o-transition-property:      $duration;
+    -webkit-transition-property: $duration;
+    transition-property:         $duration;
+}
+@mixin transition-timing-function($timing...) {
+    -moz-transition-timing-function:    $timing;
+    -o-transition-timing-function:      $timing;
+    -webkit-transition-timing-function: $timing;
+    transition-timing-function:         $timing;
+}
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+@each $key, $value in $breakpoints {
+  @for $i from 1 through $items {
+    .grid__item--#{$key}-span-#{$i} {
+      flex: 0 0 100%;
+      @include break($key) {
+        flex: 0 0 #{$i / $items * 100%};
+      }
+    }
+  }
+}
+
+// Styles
+.admin-header {
+  background: $dark;
+  position: fixed;
+  height: 100%;
+  width: 25%;
+  color: $light;
+  padding: 2em;
+  @include break(sm-md) {
+    width: 20%;
+  }
+  @include break(md) {
+    width: 15%;
+  }
+  @include break(md-lg) {
+    width: 12.5%;
+  }
+  .admin {
+    margin-top: 1.5em;
+    p {
+      font-family: Raleway;
+      font-weight: 700;
+      margin: 0;
+      line-height: normal;
+      letter-spacing: .5px;
+    }
+    .name {
+      font-size: 1.5em;
+    }
+    .role {
+      font-size: .95em;
+      color: #737373;
+    }
+  }
+  nav {
+    margin-top: 1.5em;
+    div {
+      cursor: pointer;
+      font-family: Raleway;
+      font-size: 1.15em;
+      margin: 1.5em 0;
+      display: block;
+      a {
+        font-family: Raleway;
+      }
+      i {
+        float: right;
+      }
+    }
+  }
+}
+
+.admin-content{
+  position: absolute;
+  width: 75%;
+  left: 25%;
+  @include break(sm-md) {
+    width: 80%;
+    left: 20%;
+  }
+  @include break(md) {
+    width: 85%;
+    left: 15%;
+  }
+  @include break(md-lg) {
+    width: 87.5%;
+    left: 12.5%;
+  }
+}

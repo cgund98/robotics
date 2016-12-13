@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     post 'press' => 'pages#createpost'
     get 'calendar' => 'pages#calendar'
 
-    get 'signup' => 'users#signup'
+    # get 'signup' => 'users#signup'
     resources :users
 
     get 'login' => 'sessions#new'
