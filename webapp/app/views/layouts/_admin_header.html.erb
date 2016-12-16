@@ -1,7 +1,7 @@
 <header class="admin-header">
   <div class="admin">
-    <p class="name">Callum</p>
-    <p class="role">Superadmin</p>
+    <p class="name"><%= current_user.name %></p>
+    <p class="role"><%= current_user.role %></p>
   </div>
   <nav>
     <div><%= link_to 'Dashboard', :controller => :admin, :action => :home %>

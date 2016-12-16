@@ -3,6 +3,9 @@ class SessionsController < ApplicationController
 
   def new
     @current = :current_user
+    if session[:user_id]
+      redirect_to '/admin'
+    end
   end
   def create
     @user = User.find_by_username(params[:session][:username])
