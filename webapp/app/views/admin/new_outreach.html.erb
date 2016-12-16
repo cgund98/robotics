@@ -1,0 +1,15 @@
+<div class="link-back">
+  <i class="fa fa-long-arrow-left fa-lg" aria-hidden="true"></i>
+  <%= link_to 'Back to Dashboard', :controller => :admin, :action => :home %>
+</div>
+<h1>NEW POST</h1>
+<div class="new-post">
+  <%= form_for @post, url: outreach_path, html: {method: :post} do |f| %>
+  <%= f.text_area :title, :placeholder => 'Post Title'%>
+  <%= f.text_area :content, :placeholder => 'Post Content' %>
+  <%= f.hidden_field :category, :value => 'Outreach' %>
+  <!-- <%= f.text_area :image, :placeholder => 'Post Image' %> -->
+  <%= f.file_field :image %>
+  <%= f.submit "CREATE" %>
+  <% end %>
+</div>

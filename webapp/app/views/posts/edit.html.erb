@@ -1,0 +1,10 @@
+<div class="link-back">
+  <i class="fa fa-long-arrow-left fa-lg" aria-hidden="true"></i>
+  <%= link_to 'Back to Dashboard', :controller => :admin, :action => :home %>
+</div>
+<h1>EDIT POST</h1>
+<%= form_for @post, url: post_path(@post), html: { method: :post } do |f| %>
+  <%= f.text_field :title %>
+  <%= f.text_field :content %>
+  <%= f.submit "Update", :class => "btn" %>
+<% end %>

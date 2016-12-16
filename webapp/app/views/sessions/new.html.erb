@@ -11,5 +11,8 @@
     <%= f.password_field :password, :placeholder => "Password" %>
     <%= f.submit "Log in", class: "btn-submit" %>
   <% end %>
+  <% if session[:user_id] %>
+  <p> Signed in </p>
+  <% end %>
 </div>
 </div>

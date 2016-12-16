@@ -4,15 +4,17 @@
     <p class="role">Superadmin</p>
   </div>
   <nav>
-    <div><a>Outreach</a><i class="fa fa-chevron-down" aria-hidden="true"></i>
+    <div><%= link_to 'Dashboard', :controller => :admin, :action => :home %>
 </div>
-    <div><a>Press</a><i class="fa fa-chevron-down" aria-hidden="true"></i>
+    <div><%= link_to 'Outreach', :controller => :admin, :action => :manage_outreach %>
 </div>
-    <div><a>Members</a><i class="fa fa-chevron-down" aria-hidden="true"></i>
+    <div><%= link_to 'Press', :controller => :admin, :action => :manage_press %>
 </div>
-    <div><a>Widgets</a><i class="fa fa-chevron-down" aria-hidden="true"></i>
+    <div><%= link_to 'Widgets', :controller => :admin, :action => :manage_members %>
 </div>
-    <div><a>Users</a><i class="fa fa-chevron-down" aria-hidden="true"></i>
+    <div><%= link_to 'Members', :controller => :admin, :action => :manage_widgets %>
+</div>
+    <div><%= link_to 'Users', :controller => :admin, :action => :manage_users %>
 </div>
   </nav>
 </header>

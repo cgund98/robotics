@@ -1,0 +1,25 @@
+<div class="link-back">
+  <i class="fa fa-long-arrow-left fa-lg" aria-hidden="true"></i>
+  <%= link_to 'Back to Dashboard', :controller => :admin, :action => :home %>
+</div>
+<h1>OUTREACH EVENTS</h1>
+<table class="post-table">
+  <tr>
+    <th>Post Name</th>
+    <th>Date</th>
+    <th>Action</th>
+  </tr>
+  <% @posts.each do |post| %>
+  <tr>
+    <td><%= post.title %></td>
+    <td><%= post.created_at %></td>
+    <td class="action"><%= link_to "Edit", "post/#{post.id}" %></td>
+  </tr>
+  <% end %>
+</table>
+<p>
+  <%= debug params %>
+</p>
+<div class="new">
+<%= link_to 'NEW', 'outreach/new', :class => 'new-link' %>
+</div>

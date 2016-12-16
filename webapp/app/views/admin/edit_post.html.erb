@@ -1,0 +1,13 @@
+<div class="link-back">
+  <i class="fa fa-long-arrow-left fa-lg" aria-hidden="true"></i>
+  <%= link_to 'Back to Dashboard', :controller => :admin, :action => :home %>
+</div>
+<h1>EDIT POST</h1>
+<div class="new-post">
+<%= form_for @post, url: "/admin/post/#{@post.id}", html: { method: :patch } do |f| %>
+  <%= f.text_area :title %>
+  <%= f.text_area :content %>
+  <%= f.file_field :image %>
+  <%= f.submit "Update", :class => "btn" %>
+<% end %>
+</div>

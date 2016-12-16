@@ -1,12 +1,14 @@
 class SessionsController < ApplicationController
-  def new
+  before_action :already_signed_in, only: [:new]
 
+  def new
+    @current = :current_user
   end
   def create
     @user = User.find_by_username(params[:session][:username])
     if @user && @user.authenticate(params[:session][:password])
       session[:user_id] = @user.id
-      redirect_to '/'
+      redirect_to '/admin'
     else
       redirect_to 'login'
     end

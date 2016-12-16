@@ -9,8 +9,27 @@
   <div class="lines">
     <h1 class="lines-text">PRESS ARTICLES</h1>
   </div>
+  <% @posts.each do |p| %>
+  <%= link_to "/post/#{p.title}", :class => 'post-thumbnail', :style => "width: 100%" do %>
+  <div class="grid-item--sm-md-span-8 wip" style="width: 100%">
+          <% if p.image %>
+          <%= image_tag("/post_images/#{p.id}/post.png")%>
+          <% else %>
+          <%= image_tag("/post_images/default/post.png")%>
+          <% end %>
+            <div>
+              <h3><%= p.title %></h3>
+              <p>
+                <%= p.content %>
+              </p>
+            </div>
+      </div>
+      <% end %>
+      <% end %>
+
+
     <div class="grid-item--sm-md-span-8 wip">
-            <img src="pictures/blogpicture.jpg" />
+            <%= image_tag("/post_images/1/post.png") %>
               <div>
                 <h3>2014 Internet Conference</h3>
                 <p>
