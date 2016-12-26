@@ -8,7 +8,8 @@ class PagesController < ApplicationController
     @posts = Post.where(category: 'Outreach').order(created_at: :desc)
   end
   def viewpress
-
+  end
+  def calendar
   end
   def newpost
     @post = Post.new
@@ -23,6 +24,7 @@ class PagesController < ApplicationController
   end
   def show
     @post = Post.find_by(title: params[:title])
+    @recent_posts = Post.order(created_at: :desc).limit(3).all
   end
 
   private

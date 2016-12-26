@@ -6,7 +6,7 @@
 
 
 // ---Imports---
-@import url('https://fonts.googleapis.com/css?family=Lato|Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Lato|Montserrat, Sans-serif');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500,700,800');
 // ---Variables---
@@ -53,7 +53,7 @@ $font-sizes: (
 
 @mixin title-font($size) {
     font-size: #{map-get($font-sizes, $size)};
-    font-family: Montserrat;
+    font-family: Montserrat, Sans-serif;
     font-weight: 700;
 }
 @mixin transform($transforms) {
@@ -145,7 +145,7 @@ h4,
 h5,
 h6,
 a {
-    font-family: Montserrat;
+    font-family: Montserrat, Sans-serif;
     font-weight: 700;
 }
 .page-title {
@@ -190,6 +190,12 @@ p {
 .interactiveAnimation {
   animation-name: interactiveTransition;
   animation-duration: .75s;
+}
+.light-background {
+  background: $light;
+}
+.hbr-1747 {
+  color: $green;
 }
 // Nav Bar
 .header-main {
@@ -663,14 +669,6 @@ p {
  .game {
    padding: 7em 1em;
    text-align: center;
-   width: 100%;
-   margin: auto;
-   @include break(sm) {
-     width: 80%;
-   }
-   @include break(md) {
-     width: 60%;
-   }
      h2 {
        letter-spacing: 3px;
        @include title-font(title-md);
@@ -680,6 +678,14 @@ p {
        }
      }
      p {
+       margin: auto;
+       width: 100%;
+       @include break(sm) {
+         width: 80%;
+       }
+       @include break(md) {
+         width: 60%;
+       }
      }
  }
 
@@ -705,12 +711,19 @@ p {
     @include break(md) {
       height: 18em;
     }
-    img {
-      float: left;
+    .post-image-wrapper {
       width: 100%;
+      height: 100%;
+      float: left;
       @include break(sm) {
         width: 35%;
-        height: 100%;
+        max-height: 12em;
+      }
+      img {
+        position: relative;
+        top: 50%;
+        @include transform(translateY(-50%));
+        width: 100%;
       }
     }
     float: right;
@@ -740,6 +753,17 @@ p {
   }
 }
 
+.post-thumbnail {
+  cursor: default;
+  img {
+    cursor: pointer;
+  }
+  div {
+    div {
+      cursor: pointer;
+    }
+  }
+}
 // Outreach Articles
 .outreach {
   margin: auto;
@@ -773,6 +797,7 @@ p {
       // height: 36em;
     }
     img {
+      cursor: pointer;
       float: left;
       width: 100%;
     }
@@ -813,7 +838,6 @@ p {
   color: $dark;
 }
 .post {
-  background: $light;
   padding-bottom: 5em;
   .post-img {
     position: relative;
@@ -852,6 +876,7 @@ p {
     }
   }
   .post-text {
+    background: $light;
     padding-top: 3em;
     @include break(sm) {
       margin-left: 16.6666%;
@@ -872,6 +897,7 @@ p {
     }
   }
   .recent-posts {
+    background: $light;
     display: none;
     @include break(sm) {
       display: block;
@@ -879,6 +905,7 @@ p {
     padding-top: 3em;
     float: left;
     h2 {
+      background: $light;
       @include break(sm) {
         font-size: 1.2rem;
       }
@@ -890,6 +917,7 @@ p {
       text-align: center;
     }
     div {
+      margin-bottom: 2em;
       overflow: hidden;
       position: relative;
       img {
@@ -961,7 +989,7 @@ footer {
       a {
         font-weight: 400;
         color: $light;
-        font-family: Montserrat;
+        font-family: Montserrat, Sans-serif;
         display: block;
         font-size: .95rem;
         text-align: left;
@@ -989,6 +1017,7 @@ footer {
   height: auto;
   border: none;
   .lines-text {
+    // background: $light;
     width: 70%;
     @include break(sm) {
       width: 60%;
@@ -1008,6 +1037,7 @@ footer {
   height: auto;
   border: none;
   .lines-text {
+    background: $light;
     width: 70%;
     @include break(sm) {
       width: 60%;
@@ -1051,8 +1081,8 @@ footer {
   }
 }
 .lines-text {
-  position: relative;
   background: #ffffff;
+  position: relative;
   z-index: 1;
   margin: auto;
 }

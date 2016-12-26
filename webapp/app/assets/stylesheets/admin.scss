@@ -118,7 +118,7 @@ $items: 12;
   .admin {
     margin-top: 1.5em;
     p {
-      font-family: Raleway;
+      font-family: Raleway, Sans-serif;
       font-weight: 700;
       margin: 0;
       line-height: normal;
@@ -133,17 +133,29 @@ $items: 12;
       color: #737373;
     }
   }
+  a {
+    font-family: Raleway, Sans-serif;
+    color: #5d5d5d;
+    font-size: 1.15em;
+    position: absolute;
+    bottom: 3.5em;
+  }
+  .logout {
+    bottom: 2em;
+  }
   nav {
     margin-top: 1.5em;
     div {
       cursor: pointer;
-      font-family: Raleway;
+      font-family: Raleway, Sans-serif;
       font-size: 1.15em;
       margin: 1.5em 0;
       display: block;
       a {
+        margin: none;
+        position: static;
         color: $light;
-        font-family: Raleway;
+        font-family: Raleway, Sans-serif;
       }
       i {
         float: right;
@@ -173,7 +185,7 @@ $items: 12;
   }
   .link-back {
     a {
-      font-family: Raleway;
+      font-family: Raleway, Sans-serif;
       font-weight: 700;
       color: $dark;
       font-size: 1.35rem;
@@ -187,40 +199,218 @@ $items: 12;
   h1 {
     color: $dark;
     margin-top: .25em;
-    font-family: Raleway;
+    font-family: Raleway, Sans-serif;
     font-weight: 800;
     font-size: 3rem;
     letter-spacing: 10px;
   }
 }
+.admin-button {
+  text-align: center;
+    font-family: Raleway, Sans-serif;
+    font-size: 1.25rem;
+    padding: .5em 0em;
+    border-radius: .75em;
+    display: block;
+    margin: auto;
+    margin-top: 2em;
+    color: $light;
+    background: $dark;
+    box-shadow: none;
+    border: none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    width: 8em;
+}
 .new-post {
-  font-family: Raleway;
+  font-family: Raleway, Sans-serif;
   form {
     width: 65%;
     margin-left: 12.5%;
-    font-family: Raleway;
+    font-family: Raleway, Sans-serif;
     textarea {
       padding: .5em 1em;
-      font-weight: 700;
-      font-family: Raleway;
+      font-size: 1.25rem;
+      font-weight: 400;
+      font-family: Raleway, Sans-serif;
       display: block;
       width: 100%;
       margin-top: 2em;
       background: $lightback;
       border: none;
+      height: 2.25em;
+
+    }
+    input {
+      padding: .5em 1em;
+      font-size: 1.25rem;
+      font-weight: 400;
+      font-family: Raleway, Sans-serif;
+      display: block;
+      width: 100%;
+      margin-top: 2em;
+      background: $lightback;
+      border: none;
+      height: 2.25em;
     }
     #post_title {
+      font-weight: 700;
       font-size: 2rem;
       height: 2.25em;
     }
     #post_content {
-      font-weight: 400;
       font-size: 1.25rem;
       height: 10rem;
 
     }
-    input {
-      font-family: Raleway;
+    .btn {
+      text-transform: uppercase;
+      height: auto;
+      width: auto;
+      font-family: Raleway, Sans-serif;
+      font-size: 1.25rem;
+      padding: .75em 2.5em;
+      border-radius: 1em;
+      display: block;
+      margin: auto;
+      margin-top: 2em;
+      color: $light;
+      background: $dark;
+      box-shadow: none;
+      border: none;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    select {
+      border: none;
+      background: $lightback;
+      padding: .5em 1em;
+      font-size: 1.25rem;
+      margin-top: 2em;
+      width: 100%;
+    }
+  }
+}
+.post-table {
+  overflow: hidden;
+  font-family: Raleway, Sans-serif;
+  table-layout: fixed;
+  width: 100%;
+  tr {
+    display: block;
+    padding: 1em;
+    width: 100%;
+    max-height: 5em;
+    th {
+      text-align: left;
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      display: inline-block;
+      margin-right: 1em;
+      width: 30%;
+    }
+    td {
+      vertical-align: top;
+      margin: auto;
+      overflow: hidden;
+      font-size: 1.15rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      display: inline-block;
+      width: 30%;
+      margin-right: 1em;
+
+    }
+    .action {
+      a {
+      color: $green;
+      }
+    }
+  }
+  tr:nth-child(even) {
+    background: $lightback;
+  }
+}
+.users-table {
+  overflow: hidden;
+  font-family: Raleway, Sans-serif;
+  table-layout: fixed;
+  width: 100%;
+  tr {
+    display: block;
+    padding: 1em;
+    width: 100%;
+    max-height: 5em;
+    th {
+      text-align: left;
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      display: inline-block;
+      margin-right: 1em;
+      width: 20%;
+    }
+    td {
+      vertical-align: top;
+      margin: auto;
+      overflow: hidden;
+      font-size: 1.15rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      display: inline-block;
+      width: 20%;
+      margin-right: 1em;
+
+    }
+    .action {
+      a {
+      color: $green;
+      }
+    }
+  }
+  tr:nth-child(even) {
+    background: $lightback;
+  }
+}
+.new {
+  padding: 2em;
+}
+.new-link {
+  font-family: Raleway, Sans-serif;
+  font-size: 1.25rem;
+  padding: .5em 2.25em;
+  border-radius: .75em;
+  margin: auto;
+  margin-top: 4em;
+  color: $light;
+  background: $dark;
+  box-shadow: none;
+  border: none;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-top: 10em;
+}
+.new-user {
+  font-family: Raleway, Sans-serif;
+  form {
+    width: 65%;
+    margin-left: 12.5%;
+    font-family: Raleway, Sans-serif;
+    input, select {
+      padding: .5em 1em;
+      font-weight: 700;
+      font-family: Raleway, Sans-serif;
+      display: block;
+      width: 100%;
+      margin-top: 2em;
+      background: $lightback;
+      border: none;
+      font-size: 1.25rem;
+    }
+    .btn-submit {
+      width: auto;
+      font-family: Raleway, Sans-serif;
       font-size: 1.25rem;
       padding: .75em 2.5em;
       border-radius: 1em;
@@ -236,60 +426,19 @@ $items: 12;
     }
   }
 }
-.post-table {
-  overflow: hidden;
-  font-family: Raleway;
-  table-layout: fixed;
-  width: 100%;
-  tr {
-    display: block;
-    padding: 1em;
-    width: 100%;
-    th {
-      text-align: left;
-      font-size: 1.15rem;
-      font-weight: 800;
-      letter-spacing: 1px;
-      display: inline-block;
-      margin-right: 1em;
-      width: 30%;
-    }
-    td {
-      margin: auto;
-      overflow: hidden;
-      font-size: 1.15rem;
-      font-weight: 600;
-      letter-spacing: 1px;
-      display: inline-block;
-      width: 30%;
-      margin-right: 1em;
-
-    }
-    .action {
-      a {
-      color: $green;
-    }
-    }
+.dashboard-item {
+  vertical-align: center;
+  border-radius: 1em;
+  display: inline-block;
+  padding: 5em 3em;
+  margin: 5em;
+  margin-bottom: 0;
+  text-align: center;
+  background: $lightback;
+  width: 30em;
+  h2 {
+    letter-spacing: 2px;
+    font-size: 2rem;
+    margin-top: 0;
   }
-  tr:nth-child(even) {
-    background: $lightback;
-  }
-}
-.new {
-  padding: 2em;
-}
-.new-link {
-  font-family: Raleway;
-  font-size: 1.25rem;
-  padding: .5em 2.25em;
-  border-radius: .75em;
-  margin: auto;
-  margin-top: 4em;
-  color: $light;
-  background: $dark;
-  box-shadow: none;
-  border: none;
-  font-weight: 700;
-  letter-spacing: 1px;
-  margin-top: 10em;
 }

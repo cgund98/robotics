@@ -3,7 +3,7 @@
   <div class="mobile-nav-content">
     <nav>
         <div>
-          <a href="google" id="dropdown-link">FIRST <i class="fa fa-chevron-down dropdown-chevron" aria-hidden="true" id="dropdown-chevron"></i></a>
+          <%= link_to first_path, :id => 'dropdown-link' do %> <i class="fa fa-chevron-down dropdown-chevron" aria-hidden="true" id="dropdown-chevron"></i><% end %>
           <div class="dropdown" id="dropdown-items">
             <a href="#">Games</a>
             <a href="#">Leagues</a>
@@ -31,25 +31,26 @@
         <%= link_to root_path do %>Team <span>1747</span><% end %>
         <nav>
             <div>
-              <a href="#">FIRST <i class="fa fa-chevron-down" aria-hidden="true" id="dropdown-chevron"></i></a>
+              <%= link_to root_path do %> MEMBERS <i class="fa fa-chevron-down dropdown-chevron" aria-hidden="true" id="dropdown-chevron"></i><% end %>
               <div class="dropdown">
-                <a href="#">Games</a>
-                <a href="#">Leagues</a>
+                <%= link_to 'Calendar', calendar_path %>
+                <!-- <a href="#">Leagues</a> -->
               </div>
             </div>
             <div>
-              <a href="#">MEDIA <i class="fa fa-chevron-down" aria-hidden="true" id="dropdown"></i></a>
+              <%= link_to press_path do %> PRESS <i class="fa fa-chevron-down dropdown-chevron" aria-hidden="true" id="dropdown-chevron"></i><% end %>
               <div class="dropdown">
-                <a href="#">Games</a>
-                <a href="#">Leagues</a>
+                <%= link_to 'Panda Press', press_path %>
+                <%= link_to 'Outreach', outreach_path %>
+                <!-- <a href="#">Leagues</a> -->
               </div>
             </div>
             <div>
-              <a href="#">MEMBERS <i class="fa fa-chevron-down" aria-hidden="true" id="dropdown"></i></a>
-              <div class="dropdown">
+              <%= link_to first_path do %> FIRST<% end %>
+              <!-- <div class="dropdown">
                 <a href="#">Games</a>
                 <a href="#">Leagues</a>
-              </div>
+              </div> -->
             </div>
         </nav>
     </div>

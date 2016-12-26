@@ -1,0 +1,19 @@
+<div class="link-back">
+  <i class="fa fa-long-arrow-left fa-lg" aria-hidden="true"></i>
+  <%= link_to 'Back to Dashboard', :controller => :admin, :action => :home %>
+</div>
+<h1>WIDGETS</h1>
+<table class="post-table">
+  <tr>
+    <th>Post Name</th>
+    <th>Date</th>
+    <th>Action</th>
+  </tr>
+  <% @widgets.each do |w| %>
+  <tr>
+    <td><%= w.name %></td>
+    <td><%= w.content %></td>
+    <td class="action"><%= link_to "Edit", "/admin/widgets/#{w.id}/edit" %></td>
+  </tr>
+  <% end %>
+</table>

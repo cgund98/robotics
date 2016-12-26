@@ -1,7 +1,19 @@
 <header class="admin-header">
   <div class="admin">
     <p class="name"><%= current_user.name %></p>
-    <p class="role"><%= current_user.role %></p>
+    <p class="role">
+      <% if current_user.role == 1 %>
+      <%= "Viewer" %>
+      <% elsif current_user.role == 2 %>
+      <%= "Publisher" %>
+      <% elsif current_user.role == 3 %>
+      <%= "Admin" %>
+      <% elsif current_user.role == 4 %>
+      <%= "Superadmin" %>
+      <% elsif current_user.role > 4 %>
+      <%= "God" %>
+      <% end %>
+    </p>
   </div>
   <nav>
     <div><%= link_to 'Dashboard', :controller => :admin, :action => :home %>
@@ -10,11 +22,13 @@
 </div>
     <div><%= link_to 'Press', :controller => :admin, :action => :manage_press %>
 </div>
-    <div><%= link_to 'Widgets', :controller => :admin, :action => :manage_members %>
+    <div><%= link_to 'Widgets', :controller => :admin, :action => :manage_widgets %>
 </div>
-    <div><%= link_to 'Members', :controller => :admin, :action => :manage_widgets %>
+    <div><%= link_to 'Members', :controller => :admin, :action => :manage_members %>
 </div>
     <div><%= link_to 'Users', :controller => :admin, :action => :manage_users %>
 </div>
   </nav>
+  <%= link_to 'Back to Site', '/', :class => "back-to-site" %>
+  <%= link_to 'Logout', '/logout', :class => "logout" %>
 </header>

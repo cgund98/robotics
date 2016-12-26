@@ -1,2 +1,17 @@
 <h1>ADMIN DASHBOARD</h1>
-<%= link_to "Log out", :controller => :sessions, :action => :destroy %>
+<div class="dashboard-item">
+  <h2><%= @outreach_posts %> OUTREACH EVENTS</h2>
+  <%= link_to 'MANAGE', 'admin/outreach', :class => 'admin-button' %>
+</div>
+<div class="dashboard-item">
+  <h2><%= @press_posts %> PRESS POSTS</h2>
+  <%= link_to 'MANAGE', 'admin/press', :class => 'admin-button' %>
+</div>
+<div class="dashboard-item">
+  <h2><%= @users %> USERS</h2>
+  <%= link_to 'MANAGE', 'admin/users', :class => 'admin-button' %>
+</div>
+<div class="dashboard-item">
+  <h2><%= @widgets %> Widgets</h2>
+  <%= link_to 'EDIT', 'admin/widgets', :class=> 'admin-button' %>
+</div>

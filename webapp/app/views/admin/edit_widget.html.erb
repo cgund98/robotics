@@ -1,0 +1,12 @@
+<div class="link-back">
+  <i class="fa fa-long-arrow-left fa-lg" aria-hidden="true"></i>
+  <%= link_to 'Back to Dashboard', :controller => :admin, :action => :home %>
+</div>
+<h1>EDIT WIDGET</h1>
+<div class="new-post">
+<%= form_for @widget, url: "/admin/widgets/#{@widget.id}", html: { method: :patch } do |f| %>
+  <h2><%= @widget.name %></h2>
+  <%= f.text_area :content, :id => 'post_content'%>
+  <%= f.submit "Update", :class => "btn" %>
+<% end %>
+</div>

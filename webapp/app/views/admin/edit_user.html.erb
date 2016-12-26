@@ -1,0 +1,13 @@
+<div class="link-back">
+  <i class="fa fa-long-arrow-left fa-lg" aria-hidden="true"></i>
+  <%= link_to 'Back to Dashboard', :controller => :admin, :action => :home %>
+</div>
+<h1>EDIT USER</h1>
+<div class="new-post">
+<%= form_for @user, url: "/admin/users/#{@user.id}", html: { method: :patch } do |f| %>
+  <%= f.text_field :name %>
+  <%= f.text_field :email %>
+  <%= f.select :role, options_for_select([['Viewer', 1], ['Publisher', 2], ['Admin', 3]])  %>
+  <%= f.submit "Update", :class => "btn" %>
+<% end %>
+</div>
