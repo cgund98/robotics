@@ -2,27 +2,27 @@
   <div class="nav-icon" id="nav-icon"><i class="fa fa-bars fa-lg" aria-hidden="true"></i></div>
   <div class="mobile-nav-content">
     <nav>
-        <div>
-          <%= link_to first_path, :id => 'dropdown-link' do %> <i class="fa fa-chevron-down dropdown-chevron" aria-hidden="true" id="dropdown-chevron"></i><% end %>
-          <div class="dropdown" id="dropdown-items">
-            <a href="#">Games</a>
-            <a href="#">Leagues</a>
-          </div>
+      <div>
+        <%= link_to first_path do %> FIRST<% end %>
+        <div class="dropdown">
         </div>
-        <div>
-          <a href="#" id="dropdown-link">MEDIA <i class="fa fa-chevron-down dropdown-chevron" aria-hidden="true" id="dropdown-chevron"></i></a>
-          <div class="dropdown" id="dropdown-items">
-            <a href="#">Games</a>
-            <a href="#">Leagues</a>
-          </div>
+      </div>
+      <div>
+        <%= link_to press_path do %> PRESS <i class="fa fa-chevron-down dropdown-chevron" aria-hidden="true" id="dropdown-chevron"></i><% end %>
+        <div class="dropdown">
+          <%= link_to 'Panda Press', press_path %>
+          <%= link_to 'Outreach', outreach_path %>
+          <!-- <a href="#">Leagues</a> -->
         </div>
-        <div>
-          <a href="#" id="dropdown-link">MEMBERS <i class="fa fa-chevron-down dropdown-chevron" aria-hidden="true" id="dropdown-chevron"></i></a>
-          <div class="dropdown" id="dropdown-items">
-            <a href="#">Games</a>
-            <a href="#">Leagues</a>
-          </div>
+      </div>
+      <div>
+        <%= link_to root_path do %> INFO <i class="fa fa-chevron-down dropdown-chevron" aria-hidden="true" id="dropdown-chevron"></i><% end %>
+        <div class="dropdown">
+          <%= link_to 'Calendar', calendar_path %>
+          <%= link_to 'Awards', awards_path %>
+          <!-- <a href="#">Leagues</a> -->
         </div>
+      </div>
     </nav>
   </div>
 </header>

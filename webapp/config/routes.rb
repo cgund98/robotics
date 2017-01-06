@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+ Rails.application.routes.draw do
 
 
     root 'pages#index'
@@ -9,9 +9,8 @@ Rails.application.routes.draw do
     get 'press/new' => 'pages#newpost'
     get 'calendar' => 'pages#calendar'
     get '/post/:title' => 'pages#show'
-    # get 'contact' => 'pages#contact'
-
-    # get 'signup' => 'users#signup'
+    get 'with/drew' => 'pages#drew'
+    get 'awards' => 'pages#awards'
 
     get 'login' => 'sessions#new'
     post 'login' => 'sessions#create'
@@ -41,6 +40,5 @@ Rails.application.routes.draw do
     get 'admin/users/:id/delete' => 'admin#delete_user'
     resources :users
 
-    # get 'post/:id/edit' => 'posts#edit' as: :edit_post
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

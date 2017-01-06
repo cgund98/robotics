@@ -1,7 +1,8 @@
 <div class="header-background"></div>
 <div class="post grid">
   <div class="grid__item--sm-span-8 post-img">
-    <%= render 'layouts/post_image' %>
+    <%= image_tag("/post_images/#{@post.id}/post.png", :onerror => "this.src='/post_images/default/post.png'") %>
+    <!-- <%= image_tag("/post_images/default/post.png", :id => 'default-img')%> -->
     <h2><%= @post.title %></h2>
   </div>
   <div class="grid__item--sm-span-6 post-text">
@@ -16,7 +17,7 @@
     <% @recent_posts.each do |post| %>
     <%= link_to "/post/#{post.title}" do %>
     <div>
-      <%= render 'layouts/post_image' %>
+      <%= image_tag("/post_images/#{post.id}/post.png", :onerror => "this.src='/post_images/default/post.png'") %>
       <h3><%= post.title %></h3>
     </div>
     <% end %>

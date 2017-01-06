@@ -93,6 +93,10 @@ function mobileNav() {
     });
   });
 }
+function imageFound() {
+  var defaultImg = document.getElementById('default-img');
+  defaultImg.style.display = 'none';
+}
 if (document.getElementById('interactiveWrapper')) {
 interactiveIcons();
 }

@@ -13,14 +13,11 @@
   <%= link_to "/post/#{p.title}", :class => 'post-thumbnail', :style => "width: 100%" do %>
   <div class="grid-item--sm-md-span-8 wip" style="width: 100%">
           <div class="post-image-wrapper">
-          <%= image_tag("/post_images/#{p.id}/post.png")%>
-          <%= image_tag("/post_images/default/post.png")%>
+            <%= image_tag("/post_images/#{p.id}/post.png", :onerror => "this.src='/post_images/default/post.png'") %>
           </div>
             <div>
               <h3><%= p.title %></h3>
-              <p>
-                <%= p.content %>
-              </p>
+              <p><%= p.content %></p>
             </div>
       </div>
       <% end %>

@@ -11,6 +11,9 @@ class PagesController < ApplicationController
   end
   def calendar
   end
+  def awards
+    @awards = Award.all.order(created_at: :desc)
+  end
   def newpost
     @post = Post.new
   end
@@ -25,6 +28,8 @@ class PagesController < ApplicationController
   def show
     @post = Post.find_by(title: params[:title])
     @recent_posts = Post.order(created_at: :desc).limit(3).all
+  end
+  def drew
   end
 
   private
