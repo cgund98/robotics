@@ -9,7 +9,7 @@
                       <div class="lines">
                         <h1 class="lines-text">MAKING THE FUTURE</h1>
                       </div>
-                        <p class="body-font">Here at HBR, we are proud of what we do.  We help educate High school students so they can go off to do great things when they enter the world.</p>
+                        <p class="body-font"><%= Widget.find(6).content %></p>
                     </div>
                 </div>
             <div class="widgets">
@@ -18,21 +18,21 @@
                     <%= image_tag("award.png") %>
                     <div>
                         <h2>AWARD WINNING</h2>
-                        <p>Harrison Boiler Robotics has recieved countless award over the years including Chairman's, Business, Automation.  Take a look at the full list here.</p>
+                        <p><%= Widget.find(3).content %></p>
                     </div>
                 </div>
                 <div class="grid__item--sm-span-4">
                     <%= image_tag("award.png") %>
                     <div>
                         <h2>OUR MISSION</h2>
-                        <p>Our mission is to promote a strong, unified team which works together to accomplish worthwhile goals.</p>
+                        <p><%= Widget.find(4).content %></p>
                     </div>
                 </div>
                 <div class="grid__item--sm-span-4">
                     <%= image_tag("award.png") %>
                     <div>
                         <h2>IMPRESSIVE TITLE</h2>
-                        <p>Our mission is to promote a strong, unified team which works together to accomplish worthwhile goals.</p>
+                        <p><%= Widget.find(5).content %></p>
                     </div>
                 </div>
               </div>
@@ -83,7 +83,18 @@
                 <h2><span class="hbr-1747">1747</span>: THIS YEAR'S GAME</h2>
                 <p><%= Widget.find(1).content %></p>
             </div>
-            <div class="game light-background">
+            <!-- <div class="game light-background">
                 <h2><span class="hbr-1747">10133</span>: THIS YEAR'S GAME</h2>
                 <p><%= Widget.find(2).content %></p>
+            </div> -->
+            <div class="sponsors">
+              <h2>SPONSORS</h2>
+              <div class="sponsor-slider">
+                <div id="sponsor-images">
+                  <% @sponsors = Dir.glob("**/sponsor_images/*") %>
+                  <% @sponsors.each do |sponsor| %>
+                    <%= image_tag("/#{sponsor[7..-1]}") %>
+                  <% end %>
+                </div>
+              </div>
             </div>

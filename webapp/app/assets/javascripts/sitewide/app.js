@@ -97,7 +97,14 @@ function imageFound() {
   var defaultImg = document.getElementById('default-img');
   defaultImg.style.display = 'none';
 }
+function slider() {
+  var parent = document.getElementById('sponsor-images');
+  for (var i = 1, i < parent.childNodes.length, i++) {
+    console.log(i);
+  }
+}
 if (document.getElementById('interactiveWrapper')) {
 interactiveIcons();
 }
 mobileNav();
+slider();

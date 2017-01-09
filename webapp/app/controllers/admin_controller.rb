@@ -30,8 +30,10 @@ class AdminController < ApplicationController
         render 'edit_outreach'
       end
   end
+
     def manage_members
     end
+
     def manage_widgets
       @widgets = Widget.all
     end
@@ -46,6 +48,7 @@ class AdminController < ApplicationController
         render 'edit_widget'
       end
     end
+
     def manage_users
       @users = User.all
     end
@@ -81,6 +84,7 @@ class AdminController < ApplicationController
         redirect_to '/admin/users'
       end
     end
+
     def create_outreach
       @post = Post.new(post_params)
       if @post.save
@@ -107,7 +111,40 @@ class AdminController < ApplicationController
       end
     end
 
+    def manage_awards
+      @awards = Award.all
+    end
+    def new_award
+      @award = Award.new
+    end
+    def create_award
+      @award = Award.new(award_params)
+      if @award.save
+        redirect_to '/admin/awards'
+      else
+        render 'new'
+      end
+    end
+    def edit_award
+      @award = Award.find_by(params[:id])
+    end
+    def update_award
+      @award = Award.find(params[:id])
+      if @award.update(award_params)
+        redirect_to '/admin/awards'
+      else
+        render 'edit_award'
+      end
+    end
+
+    def manage_sponsors
+      @sponsors = Dir.glob("**/sponsor_images/*")
+    end
+
     private
+    def award_params
+      params.require(:award).permit(:title, :event)
+    end
     def post_params
       params.require(:post).permit(:title, :content, :category, :image)
     end

@@ -1,0 +1,20 @@
+<div class="link-back">
+  <i class="fa fa-long-arrow-left fa-lg" aria-hidden="true"></i>
+  <%= link_to 'Back to Dashboard', :controller => :admin, :action => :home %>
+</div>
+<h1>AWARDS</h1>
+<table class="post-table">
+  <tr>
+    <th>Post Name</th>
+    <th>Content</th>
+    <th>Action</th>
+  </tr>
+  <% @awards.each do |a| %>
+  <tr>
+    <td><%= a.title %></td>
+    <td><%= a.event %></td>
+    <td class="action"><%= link_to "Edit", "/admin/awards/#{a.id}/edit" %></td>
+  </tr>
+  <% end %>
+</table>
+<%= link_to 'NEW', '/admin/awards/new', :class => 'new-link' %>

@@ -31,9 +31,10 @@
         <%= link_to root_path do %>Team <span>1747</span><% end %>
         <nav>
             <div>
-              <%= link_to root_path do %> MEMBERS <i class="fa fa-chevron-down dropdown-chevron" aria-hidden="true" id="dropdown-chevron"></i><% end %>
+              <%= link_to root_path do %> INFO <i class="fa fa-chevron-down dropdown-chevron" aria-hidden="true" id="dropdown-chevron"></i><% end %>
               <div class="dropdown">
                 <%= link_to 'Calendar', calendar_path %>
+                <%= link_to "Awards", awards_path %>
                 <!-- <a href="#">Leagues</a> -->
               </div>
             </div>

@@ -1,0 +1,12 @@
+<div class="link-back">
+  <i class="fa fa-long-arrow-left fa-lg" aria-hidden="true"></i>
+  <%= link_to 'Back to Dashboard', :controller => :admin, :action => :home %>
+</div>
+<h1>NEW USER</h1>
+<div class="new-user">
+<%= form_for @award, url: "/admin/awards" do |f| %>
+  <%= f.text_field :title, :placeholder => "Title" %>
+  <%= f.text_field :event, :placeholder => "Event" %>
+  <%= f.submit "CREATE", class: "btn-submit" %>
+  <% end %>
+</div>

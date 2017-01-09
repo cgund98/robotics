@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   helper_method :require_user
   helper_method :already_signed_in
   helper_method :need_admin
+  helper_method :need_publisher
 
   def already_signed_in
     redirect_to '/admin' if session[:userid]
@@ -21,5 +22,8 @@ class ApplicationController < ActionController::Base
   end
   def need_admin
     redirect_to '/admin' unless current_user.role > 2
+  end
+  def need_publisher
+    redirect_to '/admin' unless current_user.role > 1
   end
 end

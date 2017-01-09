@@ -19,9 +19,16 @@
     get 'admin' => "admin#home"
     get 'admin/outreach' => 'admin#manage_outreach'
     get 'admin/outreach/new' => 'admin#new_outreach'
-    get '/admin/post/:id/edit' => 'admin#edit_post'
+    get 'admin/post/:id/edit' => 'admin#edit_post'
     get 'admin/post/:id/delete' => 'admin#delete_post'
     patch 'admin/post/:id' => 'admin#update_post'
+
+    get 'admin/awards' => 'admin#manage_awards'
+    get 'admin/awards/new' => 'admin#new_award'
+    post 'admin/awards' => 'admin#create_award'
+    get 'admin/awards/:id/edit' => 'admin#edit_award'
+    patch 'admin/awards/:id' => 'admin#update_award'
+    get 'admin/awards/:id/delete' => 'admin#delete_award'
 
     post '/outreach' => 'admin#create_outreach'
     get 'admin/press' => 'admin#manage_press'
@@ -38,6 +45,9 @@
     get 'admin/users/:id/edit' => 'admin#edit_user'
     patch 'admin/users/:id' => 'admin#update_user'
     get 'admin/users/:id/delete' => 'admin#delete_user'
+
+    get 'admin/sponsors' => 'admin#manage_sponsors'
+
     resources :users
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

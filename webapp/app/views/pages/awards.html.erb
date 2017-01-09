@@ -1,11 +1,11 @@
 <div class="header-background"></div>
-<div class="content-wrapper">
+<div class="content-wrapper grid">
   <h1>AWARDS</h1>
-  <ul class="banners">
+  <ul class="banners grid__item--sm-span-8">
     <% @awards.each do |award| %>
     <li>
       <%= image_tag('firstlogo.png') %>
-      <br><p><strong><% award.title %></strong><span class="event"><%= award.event %></span></p>
+      <br><p><strong><%= award.title %></strong><span class="event"><%= award.event %></span></p>
     </li>
     <% end %>
   </ul>

@@ -1,0 +1,12 @@
+<div class="link-back">
+  <i class="fa fa-long-arrow-left fa-lg" aria-hidden="true"></i>
+  <%= link_to 'Back to Dashboard', :controller => :admin, :action => :home %>
+</div>
+<h1>EDIT AWARD</h1>
+<div class="new-post">
+<%= form_for @award, url: "/admin/awards/#{@award.id}", html: { method: :patch } do |f| %>
+  <%= f.text_field :title %>
+  <%= f.text_field :event %>
+  <%= f.submit "Update", :class => "btn" %>
+<% end %>
+</div>
