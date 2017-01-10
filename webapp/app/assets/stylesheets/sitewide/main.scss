@@ -133,6 +133,7 @@ $font-sizes: (
     box-sizing: border-box;
 }
 body{
+  overflow-x: hidden;
     margin: 0;
 }
 a {
@@ -1312,7 +1313,8 @@ footer {
 }
 .new-leaf-gradient { background: -webkit-linear-gradient(90deg,#00537E 10%,#3AA17E 90%); background: linear-gradient(90deg,#00537E 10%,#3AA17E 90%); }
 .sponsors {
-  padding-bottom: 0;
+  overflow: none;
+  padding: 4em 2em;
   margin-bottom: 0;
   h2 {
     text-align: center;
@@ -1326,14 +1328,15 @@ footer {
     div {
       div {
         height: 15em;
-        overflow: hidden;
+        overflow-x: hidden;
         img {
           transition: 1s;
           @include transform(translate(-50%));
-          position: relative;
+          position: absolute;
           // top: 50%;
-          left: 50%;
-          height: 100%;
+          left: 200%;
+          height: 15em;
+          max-width: 600px;
           padding: 2em;
           display: inline;
         }

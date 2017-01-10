@@ -4,9 +4,15 @@
 </div>
   <h1>MANAGE SPONSORS</h1>
   <div class="manage-sponsors">
+    <%= form_tag({action: :new_sponsor}, multipart: true) do %>
+      <h5>Upload New Sponsor</h5>
+      <%= file_field_tag 'image' %>
+      <%= submit_tag 'Submit', :class => 'btn-submit'%>
+    <% end %>
     <% @sponsors.each do |sponsor| %>
-    <div>
+    <div class="dashboard-item">
       <%= image_tag("/#{sponsor[7..-1]}") %>
+      <%= link_to 'DELETE', "/admin/sponsors/delete?filename=#{sponsor[7..-1]}", :class => 'admin-button', :filename => sponsor[7..-1] %>
     </div>
     <% end %>
   </end>

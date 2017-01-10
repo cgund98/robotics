@@ -99,8 +99,27 @@ function imageFound() {
 }
 function slider() {
   var parent = document.getElementById('sponsor-images');
-  for (var i = 1, i < parent.childNodes.length, i++) {
-    console.log(i);
+  var kids = parent.children;
+  for (var i = 0; i < kids.length; i++ ) {
+
+  (function(i){
+    var slideBefore = kids[i-1];
+    var slideCurrent = kids[i];
+    var slideAfter = kids[i+1];
+        setTimeout(function(){
+          slideCurrent.style.left = "50%";
+          if (slideBefore) {
+            slideBefore.style.left = "-100%";
+          }
+          if (slideAfter) {
+          slideAfter.style.left= "200%";
+        }
+      }, 3000 * i);
+      if (i == kids.length) {
+        i = 0;
+      }
+    }(i));
+
   }
 }
 if (document.getElementById('interactiveWrapper')) {

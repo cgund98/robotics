@@ -47,6 +47,8 @@
     get 'admin/users/:id/delete' => 'admin#delete_user'
 
     get 'admin/sponsors' => 'admin#manage_sponsors'
+    get 'admin/sponsors/delete' => 'admin#delete_sponsor'
+    post 'admin/sponsors/new' => 'admin#new_sponsor'
 
     resources :users
 

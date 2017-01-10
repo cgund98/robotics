@@ -140,6 +140,18 @@ class AdminController < ApplicationController
     def manage_sponsors
       @sponsors = Dir.glob("**/sponsor_images/*")
     end
+    def delete_sponsor
+      need_publisher
+      @filename = params[:filename]
+      File.delete("public/" + @filename)
+      redirect_to '/admin/sponsors'
+    end
+    def new_sponsor
+      uploaded_io = params[:image]
+      File.open(Rails.root.join('public', 'sponsor_images', uploaded_io.original_filename), 'wb') do |file|
+        file.write(uploaded_io.read)
+      end
+    end
 
     private
     def award_params
