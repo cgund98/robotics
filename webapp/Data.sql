@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 09, 2017 at 05:33 PM
+-- Generation Time: Jan 10, 2017 at 05:37 PM
 -- Server version: 5.7.16-0ubuntu0.16.04.1
 -- PHP Version: 7.0.8-0ubuntu0.16.04.3
 
@@ -74,22 +74,26 @@ CREATE TABLE `posts` (
   `category` varchar(255) DEFAULT NULL,
   `image` varchar(255) DEFAULT NULL,
   `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL
+  `updated_at` datetime NOT NULL,
+  `youtube_url` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `posts`
 --
 
-INSERT INTO `posts` (`id`, `title`, `content`, `category`, `image`, `created_at`, `updated_at`) VALUES
-(1, 'A test post', 'Edited', 'Outreach', 'none', '2016-12-15 02:57:05', '2016-12-15 23:42:34'),
-(3, 'A second test ', 'returned', 'Press', '', '2016-12-15 23:45:02', '2016-12-15 23:45:02'),
-(4, 'test', 'dsdfds', 'Press', '', '2016-12-15 23:45:39', '2016-12-15 23:45:39'),
-(5, 'fdf', 'dfdfd', 'Outreach', '', '2016-12-15 23:46:23', '2016-12-15 23:46:23'),
-(6, 'fdf', 'nope', 'Press', 'sdsd', '2016-12-15 23:48:58', '2016-12-15 23:51:21'),
-(8, 'dfadsf', 'aadada', 'Outreach', 'adad', '2016-12-15 23:49:12', '2016-12-15 23:49:12'),
-(12, 'a post', '1 a two', 'Outreach', NULL, '2016-12-16 00:29:08', '2016-12-16 00:29:08'),
-(13, 'Test if its an image', '<img src="none.jpg">', 'Press', NULL, '2016-12-16 01:46:38', '2016-12-16 01:46:38');
+INSERT INTO `posts` (`id`, `title`, `content`, `category`, `image`, `created_at`, `updated_at`, `youtube_url`) VALUES
+(1, 'A test post', 'Edited', 'Outreach', 'none', '2016-12-15 02:57:05', '2016-12-15 23:42:34', NULL),
+(3, 'A second test ', 'returned', 'Press', '', '2016-12-15 23:45:02', '2016-12-15 23:45:02', NULL),
+(4, 'test', 'dsdfds', 'Press', '', '2016-12-15 23:45:39', '2016-12-15 23:45:39', NULL),
+(5, 'fdf', 'dfdfd', 'Outreach', '', '2016-12-15 23:46:23', '2016-12-15 23:46:23', NULL),
+(6, 'fdf', 'nope', 'Press', 'sdsd', '2016-12-15 23:48:58', '2016-12-15 23:51:21', NULL),
+(8, 'dfadsf', 'aadada', 'Outreach', 'adad', '2016-12-15 23:49:12', '2016-12-15 23:49:12', NULL),
+(12, 'a post', '1 a two', 'Outreach', NULL, '2016-12-16 00:29:08', '2016-12-16 00:29:08', NULL),
+(13, 'Test if its an image', '<img src="none.jpg">', 'Press', NULL, '2016-12-16 01:46:38', '2016-12-16 01:46:38', NULL),
+(14, 'Hope it works!', 'youtubes work please', 'Outreach', NULL, '2017-01-10 21:49:18', '2017-01-10 21:49:18', NULL),
+(15, 'Youtube test', 'Content', 'Press', NULL, '2017-01-10 22:08:36', '2017-01-10 22:08:36', NULL),
+(16, 'Image upload', 'content', 'Press', NULL, '2017-01-10 22:11:14', '2017-01-10 22:12:34', 'https://www.youtube.com/embed/gkLywkiDbSk');
 
 -- --------------------------------------------------------
 
@@ -115,7 +119,8 @@ INSERT INTO `schema_migrations` (`version`) VALUES
 ('20161213171318'),
 ('20161215025114'),
 ('20161216190532'),
-('20170106030406');
+('20170106030406'),
+('20170110214450');
 
 -- --------------------------------------------------------
 
@@ -221,7 +226,7 @@ ALTER TABLE `awards`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT for table `users`
 --
