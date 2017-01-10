@@ -8,8 +8,9 @@
   <%= f.text_area :title, :placeholder => 'Post Title'%>
   <%= f.text_area :content, :placeholder => 'Post Content' %>
   <%= f.hidden_field :category, :value => 'Press' %>
+  <%= f.text_field :youtube_url, :placeholder => 'Youtube Embed Video URL' %>
   <!-- <%= f.text_area :image, :placeholder => 'Post Image' %> -->
   <%= f.file_field :image %>
-  <%= f.submit "CREATE", :class => 'btn-submit' %>
+  <%= f.submit "CREATE" %>
   <% end %>
 </div>

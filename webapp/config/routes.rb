@@ -11,6 +11,7 @@
     get '/post/:title' => 'pages#show'
     get 'with/drew' => 'pages#drew'
     get 'awards' => 'pages#awards'
+    get 'links' => 'pages#links'
 
     get 'login' => 'sessions#new'
     post 'login' => 'sessions#create'

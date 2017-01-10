@@ -108,14 +108,23 @@ function slider() {
     var slideAfter = kids[i+1];
         setTimeout(function(){
           slideCurrent.style.left = "50%";
+          setTimeout(function(){
+            slideCurrent.style.display = "inline";
+          }, 350)
           if (slideBefore) {
             slideBefore.style.left = "-100%";
+            setTimeout(function(){
+              slideBefore.style.display = "none";
+            }, 500)
           }
           if (slideAfter) {
           slideAfter.style.left= "200%";
+          setTimeout(function(){
+            slideAfter.style.display = "none";
+          }, 500)
         }
-      }, 3000 * i);
-      if (i == kids.length) {
+      }, 4000 * i);
+      if (i >= kids.length) {
         i = 0;
       }
     }(i));

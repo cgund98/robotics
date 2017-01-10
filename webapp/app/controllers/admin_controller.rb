@@ -158,10 +158,10 @@ class AdminController < ApplicationController
       params.require(:award).permit(:title, :event)
     end
     def post_params
-      params.require(:post).permit(:title, :content, :category, :image)
+      params.require(:post).permit(:title, :youtube_url, :content, :category, :image)
     end
   	def post_update_params
-    	params.require(:post).permit(:title, :content, :image)
+    	params.require(:post).permit(:title, :youtube_url, :content, :image)
   	end
     def user_params
       params.require(:user).permit(:name, :email, :password, :role, :username)

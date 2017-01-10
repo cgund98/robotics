@@ -8,6 +8,10 @@
   <div class="grid__item--sm-span-6 post-text">
     <p class="body-font">
       <%= @post.content %>
+      <br />
+      <% if @post.youtube_url %>
+      <iframe width="560" height="315" src="<%= @post.youtube_url %>" frameborder="0" allowfullscreen></iframe>
+      <% end %>
     </p>
   </div>
   <div class="grid__item--sm-span-2 recent-posts">

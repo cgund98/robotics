@@ -31,9 +31,11 @@ class PagesController < ApplicationController
   end
   def drew
   end
+  def links
+  end
 
   private
   def post_params
-    params.require(:post).permit(:title, :content, :category)
+    params.require(:post).permit(:title, :youtube_url, :content, :category)
   end
 end

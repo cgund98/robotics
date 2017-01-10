@@ -7,6 +7,7 @@
 <%= form_for @post, url: "/admin/post/#{@post.id}", html: { method: :patch } do |f| %>
   <%= f.text_area :title %>
   <%= f.text_area :content %>
+  <%= f.text_field :youtube_url, :placeholder => 'Youtube Embed Video URL' %>
   <%= f.file_field :image %>
   <%= f.submit "Update", :class => "btn" %>
 <% end %>
